@@ -18,7 +18,10 @@ from rasa_core_sdk.events import SlotSet
 
 logger = logging.getLogger(__name__)
 
-ts = time.time()
+def get_time():
+    ts = time.time()
+    return ts
+
 class MemoryVisit(Action):
     def name(self):
         return "memory_visit"
@@ -37,7 +40,7 @@ class MemoryVisit(Action):
             user_id = len(time_list) + 1
             
             
-            st = datetime.datetime.fromtimestamp(ts).strftime('%Y-%m-%d %H:%M')
+            st = datetime.datetime.fromtimestamp(get_time()).strftime('%Y-%m-%d %H:%M')
             print(st)
             post = {"id": str(user_id),
                      "first_time": st}
