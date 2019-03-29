@@ -1,0 +1,10 @@
+﻿action_endpoint:
+  url: "http://localhost:5005/webhook"
+tracker_store:
+    store_type: mongod
+    url : ds127376.mlab.com:27376
+    db: chatbot
+    username : rasaguy
+    password : rasabot1
+    auth_source : chatbot
+    

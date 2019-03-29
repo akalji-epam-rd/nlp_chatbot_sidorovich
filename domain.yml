@@ -1,0 +1,17 @@
+
+intents:
+  - greet
+  - goodbye
+
+slots:
+  id:
+    type: text
+
+actions:
+- memory_visit
+- utter_goodbye
+
+templates:
+  utter_goodbye:
+  - text: "Hope to see ya again buddie"
+  - text: "Don't lose yourself in that lands"
