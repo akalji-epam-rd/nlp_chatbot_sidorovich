@@ -14,7 +14,7 @@ Simple telegram-bot
  - sudo python3.6 -m rasa_core_sdk.endpoint --actions actions &
  - sudo python3.6 -m rasa_core.run -d models/dialogue -u models/current/nlu --port 5005 --endpoints endpoints.yml --credentials credentials.yml &
 
-Последние две комманды запускаются в фоновом режиме, поэтому не забывайте из убивать.
+Последние две комманды запускаются в фоновом режиме, поэтому не забывайте их убивать. +если вам не надо переобучать модель, вы можете запустить только их.
 
 Чуть позже сделаю всё по-человечески.
 
