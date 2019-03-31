@@ -1,7 +1,7 @@
 %YAML 1.1
 ---
 actions:
-- utter_greet
+- memory_visit
 - utter_goodbye
 config:
   store_entities_as_slots: true
@@ -12,9 +12,12 @@ intents:
     use_entities: true
 - goodbye:
     use_entities: true
-slots: {}
+slots:
+  id:
+    auto_fill: true
+    initial_value: null
+    type: rasa_core.slots.TextSlot
 templates:
   utter_goodbye:
-  - text: Bye
-  utter_greet:
-  - text: Hey! How are you?
+  - text: Hope to see ya again buddie
+  - text: Don't lose yourself in that lands
