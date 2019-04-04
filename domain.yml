@@ -6,10 +6,16 @@ intents:
 slots:
   id:
     type: text
+  info:
+    type: text
+
+entities:
+- info    
 
 actions:
 - memory_visit
 - utter_goodbye
+- answer_question
 
 templates:
   utter_goodbye:
