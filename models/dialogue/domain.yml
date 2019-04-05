@@ -3,17 +3,36 @@
 actions:
 - memory_visit
 - utter_goodbye
+- answer_question
+- utter_joke
+- tell_an_anecdote
 config:
   store_entities_as_slots: true
-entities: []
+entities:
+- info
+- anecdote_theme
 forms: []
 intents:
 - greet:
     use_entities: true
 - goodbye:
     use_entities: true
+- joke:
+    use_entities: true
+- info_question:
+    use_entities: true
+- anecdote:
+    use_entities: true
 slots:
+  anecdote_theme:
+    auto_fill: true
+    initial_value: null
+    type: rasa_core.slots.TextSlot
   id:
+    auto_fill: true
+    initial_value: null
+    type: rasa_core.slots.TextSlot
+  info:
     auto_fill: true
     initial_value: null
     type: rasa_core.slots.TextSlot
@@ -21,3 +40,11 @@ templates:
   utter_goodbye:
   - text: Hope to see ya again buddie
   - text: Don't lose yourself in that lands
+  utter_joke:
+  - text: Stalker bought an exosuit and it was perfectly fitted
+  - text: Group of stalkers Finn and Skin went to Sidorovich to get their cash for
+      the habar, but he messed up. So Skin got check for Finn and Finn got Foreskin
+  - text: A Controller was passing through hte forest and saw a burning zaporozhec.
+      It got inside and burned down.
+  - text: A Pseudogiant learned how to breath with his ass, he sat on a tree stump
+      and choked.

@@ -54,11 +54,27 @@
 * info_question{"info":"Kazakov"}
   - answer_question
 
+## anec_
+* anecdote{"anecdote_theme":"bloodsucker"}
+  - tell_an_anecdote
+
+## story_joke
+* joke
+  - utter_joke
+
 
 ## say goodbye
 * goodbye
   - utter_goodbye
-  
+
+## dialogue joke
+* greet
+  - memory_visit
+* joke
+  - utter_joke
+* goodbye
+  - utter_goodbye
+
 ## dialogue 1
 * greet
   - memory_visit

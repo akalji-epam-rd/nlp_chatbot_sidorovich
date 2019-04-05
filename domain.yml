@@ -2,22 +2,35 @@
 intents:
   - greet
   - goodbye
-
+  - joke
+  - info_question
+  - anecdote
 slots:
   id:
     type: text
   info:
     type: text
+  anecdote_theme:
+    type: text
 
 entities:
-- info    
+- info
+- anecdote_theme    
 
 actions:
 - memory_visit
 - utter_goodbye
 - answer_question
+- utter_joke
+- tell_an_anecdote
 
 templates:
   utter_goodbye:
   - text: "Hope to see ya again buddie"
   - text: "Don't lose yourself in that lands"
+  
+  utter_joke:
+  - text: "Stalker bought an exosuit and it was perfectly fitted"
+  - text: "Group of stalkers Finn and Skin went to Sidorovich to get their cash for the habar, but he messed up. So Skin got check for Finn and Finn got Foreskin"
+  - text: "A Controller was passing through hte forest and saw a burning zaporozhec. It got inside and burned down."
+  - text: "A Pseudogiant learned how to breath with his ass, he sat on a tree stump and choked."

@@ -1,8 +1,15 @@
 {
   "states": [
+    "intent_anecdote",
     "intent_goodbye",
     "intent_greet",
+    "intent_info_question",
+    "intent_joke",
+    "entity_info",
+    "entity_anecdote_theme",
+    "slot_anecdote_theme_0",
     "slot_id_0",
+    "slot_info_0",
     "prev_action_listen",
     "prev_action_restart",
     "prev_action_default_fallback",
@@ -11,6 +18,9 @@
     "prev_action_default_ask_affirmation",
     "prev_action_default_ask_rephrase",
     "prev_memory_visit",
-    "prev_utter_goodbye"
+    "prev_utter_goodbye",
+    "prev_answer_question",
+    "prev_utter_joke",
+    "prev_tell_an_anecdote"
   ]
 }
