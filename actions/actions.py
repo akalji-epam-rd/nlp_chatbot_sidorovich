@@ -53,3 +53,13 @@ class MemoryVisit(Action):
             dispatcher.utter_message("Oooh, I remember your smily face. It was sooo long ago. Thanks Gods I still remember correct time. I've met you %s" % first_time)
         connection.close()
         return []
+    
+class AnswerQuestion(Action):
+    def name(self):
+        return "answer_question"
+
+    def run(self, dispatcher, tracker, domain):
+        # what your action should do
+        info = tracker.get_slot('info')
+        dispatcher.utter_message("Yea, I can tell you a lot of things about %s" % info)
+        return []
