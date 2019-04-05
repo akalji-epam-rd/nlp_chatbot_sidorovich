@@ -40,6 +40,18 @@
       {
         "intent": "goodbye",
         "text": "see you later"
+      },
+      {
+        "intent": "sell",
+        "text": "i want to sell something"
+      },
+      {
+        "intent": "sell",
+        "text": "i want to sell smth"
+      },
+      {
+        "intent": "sell",
+        "text": "sell"
       }
     ],
     "regex_features": [],

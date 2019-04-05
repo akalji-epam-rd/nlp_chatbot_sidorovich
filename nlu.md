@@ -13,6 +13,11 @@
 - see you around
 - see you later
 
+## intent:sell
+- i want to sell something
+- i want to sell smth
+- sell
+
 ## intent:info_question
 - What do you know about [Otter](info)
 - Do you know [Generators](info)
