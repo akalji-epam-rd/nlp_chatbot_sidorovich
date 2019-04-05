@@ -15,7 +15,6 @@
   - slot{"id" : "19"}
   
 ## story 4
-<<<<<<< HEAD
 * greet
   - memory_visit
   - slot{"id" : "56"}
@@ -64,11 +63,6 @@
   - utter_joke
 
 
-=======
-* sell
- - utter_sell
-  
->>>>>>> 4fcc753... Sell_scenario
 ## say goodbye
 * goodbye
   - utter_goodbye
