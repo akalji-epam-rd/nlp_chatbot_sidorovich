@@ -28,9 +28,14 @@ templates:
   utter_goodbye:
   - text: "Hope to see ya again buddie"
   - text: "Don't lose yourself in that lands"
+<<<<<<< HEAD
   
   utter_joke:
   - text: "Stalker bought an exosuit and it was perfectly fitted"
   - text: "Group of stalkers Finn and Skin went to Sidorovich to get their cash for the habar, but he messed up. So Skin got check for Finn and Finn got Foreskin"
   - text: "A Controller was passing through hte forest and saw a burning zaporozhec. It got inside and burned down."
   - text: "A Pseudogiant learned how to breath with his ass, he sat on a tree stump and choked."
+=======
+  utter_sell:
+  - text:"So, do you really want to sell sometheing?"
+>>>>>>> 4fcc753... Sell_scenario

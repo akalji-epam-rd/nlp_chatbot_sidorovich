@@ -82,6 +82,10 @@
         }
     ],
     "training_data": "training_data.json",
+<<<<<<< HEAD
     "trained_at": "20190405-183555",
+=======
+    "trained_at": "20190404-184043",
+>>>>>>> 4fcc753... Sell_scenario
     "rasa_nlu_version": "0.14.6"
 }

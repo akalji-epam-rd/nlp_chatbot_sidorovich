@@ -12,6 +12,7 @@
 - see you around
 - see you later
 
+<<<<<<< HEAD
 ## intent:joke
 - tell me a short funny story
 - Can you tell me a joke?
@@ -38,3 +39,10 @@
 - Can you tell me about [Darkscape](info)
 - I want to know about [Vortex](info)
 - Do you hear about [Kazakov](info)
+=======
+## intent:sell
+- i want to sell something
+- i want to sell smth
+- sell
+ 
+>>>>>>> 4fcc753... Sell_scenario
