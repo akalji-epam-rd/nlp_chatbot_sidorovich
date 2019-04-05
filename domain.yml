@@ -15,3 +15,5 @@ templates:
   utter_goodbye:
   - text: "Hope to see ya again buddie"
   - text: "Don't lose yourself in that lands"
+  utter_sell:
+  - text:"So, do you really want to sell sometheing?"

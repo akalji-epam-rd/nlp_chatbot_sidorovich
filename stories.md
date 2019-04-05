@@ -14,6 +14,10 @@
   - memory_visit
   - slot{"id" : "19"}
   
+## story 4
+* sell
+ - utter_sell
+  
 ## say goodbye
 * goodbye
   - utter_goodbye

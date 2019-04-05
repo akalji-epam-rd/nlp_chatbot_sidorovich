@@ -12,3 +12,9 @@
 - goodbye
 - see you around
 - see you later
+
+## intent:sell
+- i want to sell something
+- i want to sell smth
+- sell
+ 
