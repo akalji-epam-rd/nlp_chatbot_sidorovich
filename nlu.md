@@ -17,7 +17,7 @@
 - i want to sell smth
 - sell
 
-## intent:anekdot
+## intent:anecdote
 - I would like to hear a joke about [bloodsucker](anecdote_theme)
 - Tell me a joke with [pseudogiant](anecdote_theme) in it
 - An anecdote about [controller](anecdote_theme) please
