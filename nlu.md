@@ -30,3 +30,8 @@
 - Can you tell me about [Darkscape](info)
 - I want to know about [Vortex](info)
 - Do you hear about [Kazakov](info)
+
+## intent:buy
+- buy
+- What can you offer me
+- I want to buy something

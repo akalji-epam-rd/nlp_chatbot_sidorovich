@@ -91,3 +91,7 @@
   - answer_question
 * goodbye
   - utter_goodbye
+
+## story buy
+* buy
+  - utter_buy

@@ -4,6 +4,7 @@ intents:
   - info_question
   - anecdote
   - sell
+  - buy
 
 slots:
   id:
@@ -12,10 +13,13 @@ slots:
     type: text
   anecdote_theme:
     type: text
+  purhased_item:
+    type: text
 
 entities:
 - info
-- anecdote_theme    
+- anecdote_theme
+- purchased_item
 
 actions:
 - utter_goodbye
@@ -24,6 +28,7 @@ actions:
 - tell_an_anecdote
 - memory_visit
 - answer_question
+- utter_buy
 
 templates:
   utter_goodbye:
@@ -37,5 +42,8 @@ templates:
   - text: "A Pseudogiant learned how to breath with his ass, he sat on a tree stump and choked."
 
   utter_sell:
-  - text:"So, do you really want to sell sometheing?"
-  - text:"Nu davai, show what you've got"
+  - text: "So, do you really want to sell sometheing?"
+  - text: "Nu davai, show what you've got"
+
+  utter_buy:
+  - text: "What do you want?"
