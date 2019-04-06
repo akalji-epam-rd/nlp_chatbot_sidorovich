@@ -1,15 +1,20 @@
 {
   "states": [
     "intent_anecdote",
+    "intent_can_hide",
     "intent_goodbye",
     "intent_greet",
     "intent_info_question",
     "intent_sell",
+    "intent_when_was",
+    "intent_when_will",
+    "intent_where_hide",
     "entity_info",
     "entity_anecdote_theme",
     "slot_anecdote_theme_0",
     "slot_id_0",
     "slot_info_0",
+    "slot_station_name_0",
     "prev_action_listen",
     "prev_action_restart",
     "prev_action_default_fallback",
@@ -22,6 +27,10 @@
     "prev_utter_sell",
     "prev_tell_an_anecdote",
     "prev_memory_visit",
-    "prev_answer_question"
+    "prev_answer_question",
+    "prev_action_find_hideaway",
+    "prev_action_check_hideaway",
+    "prev_action_last_emission",
+    "prev_action_future_emission"
   ]
 }

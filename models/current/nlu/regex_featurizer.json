@@ -1,1 +1,6 @@
-[]
+[
+    {
+        "name": "station_name",
+        "pattern": "(?i)(\\bZaton\\b|\\bYanov\\b|\\bHospital\\b|\\bSkadovsk\\b|\\bKopachi\\b|\\bCordon\\b|\\bRostok\\b|\\bAgroprom\\b|\\bYantar\\b)"
+    }
+]

@@ -72,3 +72,41 @@ class AnswerQuestion(Action):
         info = tracker.get_slot('info')
         dispatcher.utter_message("Yea, I can tell you a lot of things about %s" % info)
         return []
+
+
+class ActionFindHideaway(Action):
+    def name(self):
+        return "action_find_hideaway"
+
+    def run(self, dispatcher, tracker, domain):
+        dispatcher.utter_message("You can hide in Yanov")
+        return []
+
+
+class ActionCheckHideaway(Action):
+    def name(self):
+        return "action_check_hideaway"
+
+    def run(self, dispatcher, tracker, domain):
+
+        station_name = tracker.get_slot('station_name')
+        dispatcher.utter_message("You can't hide in " + station_name)
+        return []
+
+
+class ActionLastEmission(Action):
+    def name(self):
+        return "action_last_emission"
+
+    def run(self, dispatcher, tracker, domain):
+        dispatcher.utter_message("Last emission was 30 minutes ago")
+        return []
+
+
+class ActionFutureEmission(Action):
+    def name(self):
+        return "action_future_emission"
+
+    def run(self, dispatcher, tracker, domain):
+        dispatcher.utter_message("The emission will be in 50 minutes")
+        return []

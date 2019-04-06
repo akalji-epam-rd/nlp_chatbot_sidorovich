@@ -4,6 +4,10 @@ intents:
   - info_question
   - anecdote
   - sell
+  - can_hide
+  - where_hide
+  - when_was
+  - when_will
 
 slots:
   id:
@@ -11,6 +15,8 @@ slots:
   info:
     type: text
   anecdote_theme:
+    type: text
+  station_name:
     type: text
 
 entities:
@@ -24,6 +30,10 @@ actions:
 - tell_an_anecdote
 - memory_visit
 - answer_question
+- action_find_hideaway
+- action_check_hideaway
+- action_last_emission
+- action_future_emission
 
 templates:
   utter_goodbye:
