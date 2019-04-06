@@ -15,6 +15,10 @@
   - slot{"id" : "19"}
   
 ## story 4
+* sell
+ - utter_sell
+
+## story 4
 * greet
   - memory_visit
   - slot{"id" : "56"}
@@ -80,7 +84,7 @@
   - memory_visit
 * goodbye
   - utter_goodbye
-  
+
 ## dialogue 2
 * greet
   - memory_visit
