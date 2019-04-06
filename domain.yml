@@ -4,6 +4,10 @@ intents:
   - info_question
   - anecdote
   - sell
+  - can_hide
+  - where_hide
+  - when_was
+  - when_will
   - buy
 
 slots:
@@ -12,6 +16,8 @@ slots:
   info:
     type: text
   anecdote_theme:
+    type: text
+  station_name:
     type: text
   purhased_item:
     type: text
@@ -28,7 +34,11 @@ actions:
 - tell_an_anecdote
 - memory_visit
 - answer_question
-- utter_buy
+- action_find_hideaway
+- action_check_hideaway
+- action_last_emission
+- action_future_emission
+- action_buy
 
 templates:
   utter_goodbye:
@@ -44,6 +54,3 @@ templates:
   utter_sell:
   - text: "So, do you really want to sell sometheing?"
   - text: "Nu davai, show what you've got"
-
-  utter_buy:
-  - text: "What do you want?"

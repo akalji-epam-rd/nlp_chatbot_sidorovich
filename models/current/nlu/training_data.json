@@ -179,15 +179,132 @@
       },
       {
         "intent": "buy",
-        "text": "What can you offer me"
+        "text": "What can you offer me?"
       },
       {
         "intent": "buy",
         "text": "I want to buy something"
+      },
+      {
+        "intent": "buy",
+        "text": "I want to buy smth"
+      },
+      {
+        "intent": "buy",
+        "text": "I want to eat"
+      },
+      {
+        "intent": "buy",
+        "text": "I want to drink"
+      },
+      {
+        "intent": "buy",
+        "text": "What do you have for me?"
+      },
+      {
+        "intent": "can_hide",
+        "entities": [
+          {
+            "start": 17,
+            "end": 22,
+            "value": "Zaton",
+            "entity": "station_name"
+          }
+        ],
+        "text": "Can I get to the Zaton before the emission?"
+      },
+      {
+        "intent": "can_hide",
+        "entities": [
+          {
+            "start": 32,
+            "end": 37,
+            "value": "Zaton",
+            "entity": "station_name"
+          }
+        ],
+        "text": "Can I hide from emission at the Zaton?"
+      },
+      {
+        "intent": "can_hide",
+        "entities": [
+          {
+            "start": 18,
+            "end": 23,
+            "value": "Zaton",
+            "entity": "station_name"
+          }
+        ],
+        "text": "Can I hide at the Zaton from emission?"
+      },
+      {
+        "intent": "can_hide",
+        "entities": [
+          {
+            "start": 17,
+            "end": 22,
+            "value": "Yanov",
+            "entity": "station_name"
+          }
+        ],
+        "text": "Can I get to the Yanov before the emission?"
+      },
+      {
+        "intent": "can_hide",
+        "entities": [
+          {
+            "start": 32,
+            "end": 37,
+            "value": "Yanov",
+            "entity": "station_name"
+          }
+        ],
+        "text": "Can I hide from emission at the Yanov?"
+      },
+      {
+        "intent": "can_hide",
+        "entities": [
+          {
+            "start": 18,
+            "end": 26,
+            "value": "Hospital",
+            "entity": "station_name"
+          }
+        ],
+        "text": "Can I hide at the Hospital from emission?"
+      },
+      {
+        "intent": "where_hide",
+        "text": "Where can I hide from emission?"
+      },
+      {
+        "intent": "where_hide",
+        "text": "Soon emission, where can I hide?"
+      },
+      {
+        "intent": "where_hide",
+        "text": "What is the nearest place where I can hide from the emission?"
+      },
+      {
+        "intent": "when_was",
+        "text": "When was the last emission?"
+      },
+      {
+        "intent": "when_was",
+        "text": "When was the emission?"
+      },
+      {
+        "intent": "when_will",
+        "text": "When will be the emission?"
       }
     ],
     "regex_features": [],
-    "lookup_tables": [],
+    "lookup_tables": [
+      {
+        "name": "station_name",
+        "elements": "station_name.txt"
+      }
+    ],
     "entity_synonyms": []
   }
 }

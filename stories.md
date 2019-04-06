@@ -94,4 +94,21 @@
 
 ## story buy
 * buy
-  - utter_buy
+  - action_buy
+  
+## can_hide story
+* can_hide
+  - action_check_hideaway
+
+## where_hide story
+* where_hide
+  - action_find_hideaway
+
+## last emission story
+* when_was
+  - action_last_emission
+
+## future emission story
+* when_will
+  - action_future_emission
+
