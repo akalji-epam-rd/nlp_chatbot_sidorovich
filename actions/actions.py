@@ -27,8 +27,9 @@ class StalkerAnecdote(Action):
         return 'tell_an_anecdote'
     def run(self, dispatcher, tracker, domain):
         theme = tracker.get_slot('anecdote_theme')
-        dispatcher.utter_message('funny anecdote with ' + theme)
-        #dispatcher.utter_template('utter_joke')
+        dispatcher.utter_message('There should be funny anecdote with ' + theme)
+        dispatcher.utter_message('But take this instead')
+        dispatcher.utter_template('utter_joke', tracker)
         return []
 
 class MemoryVisit(Action):

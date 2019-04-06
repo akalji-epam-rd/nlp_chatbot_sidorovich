@@ -38,7 +38,7 @@
     "rasa_core.policies.memoization.MemoizationPolicy",
     "rasa_core.policies.form_policy.FormPolicy"
   ],
-  "trained_at": "20190406-101552",
+  "trained_at": "20190406-161306",
   "rasa_core": "0.13.5",
   "tensorflow": "1.12.0",
   "sklearn": "0.20.2"
