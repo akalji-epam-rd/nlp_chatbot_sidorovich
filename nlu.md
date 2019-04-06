@@ -1,11 +1,10 @@
-
 ## intent:greet
 - hey
 - hello
 - hi
 - good morning
 - good evening
-- hey there
+- nu zdravstvui
 
 ## intent:goodbye
 - bye
@@ -17,6 +16,13 @@
 - i want to sell something
 - i want to sell smth
 - sell
+
+## intent:anecdote
+- I would like to hear a joke about [bloodsucker](anecdote_theme)
+- Tell me a joke with [pseudogiant](anecdote_theme) in it
+- An anecdote about [controller](anecdote_theme) please
+- Tell me an anecdote with [snork](anecdote_theme)  please
+- I would like to hear an anecdote [burer](anecdote_theme)
 
 ## intent:info_question
 - What do you know about [Otter](info)

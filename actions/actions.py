@@ -22,6 +22,15 @@ def get_time():
     ts = time.time()
     return ts
 
+class StalkerAnecdote(Action):
+    def name(self):
+        return 'tell_an_anecdote'
+    def run(self, dispatcher, tracker, domain):
+        theme = tracker.get_slot('anecdote_theme')
+        dispatcher.utter_message('funny anecdote with ' + theme)
+        #dispatcher.utter_template('utter_joke')
+        return []
+
 class MemoryVisit(Action):
     def name(self):
         return "memory_visit"
