@@ -2,9 +2,10 @@
 intents:
   - greet
   - goodbye
-  - joke
   - info_question
   - anecdote
+  - sell
+
 slots:
   id:
     type: text
@@ -18,11 +19,12 @@ entities:
 - anecdote_theme    
 
 actions:
-- memory_visit
 - utter_goodbye
-- answer_question
 - utter_joke
+- utter_sell
 - tell_an_anecdote
+- memory_visit
+- answer_question
 
 templates:
   utter_goodbye:
@@ -34,3 +36,6 @@ templates:
   - text: "Group of stalkers Finn and Skin went to Sidorovich to get their cash for the habar, but he messed up. So Skin got check for Finn and Finn got Foreskin"
   - text: "A Controller was passing through hte forest and saw a burning zaporozhec. It got inside and burned down."
   - text: "A Pseudogiant learned how to breath with his ass, he sat on a tree stump and choked."
+
+  utter_sell:
+  - text:"So, do you really want to sell sometheing?"

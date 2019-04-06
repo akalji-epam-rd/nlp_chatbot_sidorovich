@@ -62,10 +62,9 @@
 * anecdote{"anecdote_theme":"bloodsucker"}
   - tell_an_anecdote
 
-## story_joke
-* joke
-  - utter_joke
-
+## story_sell
+* sell
+ - utter_sell
 
 ## say goodbye
 * goodbye

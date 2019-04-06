@@ -12,18 +12,10 @@
 - see you around
 - see you later
 
-## intent:joke
-- tell me a short funny story
-- Can you tell me a joke?
-- I would like to hear a joke
-- Tell me a joke
-- A joke please
-- Tell me a joke please
-- I would like to hear a joke
-- I would joke to hear a joke, please 
-- Can you tell jokes?
-- Please tell me a joke
-- I need to hear a joke
+## intent:sell
+- i want to sell something
+- i want to sell smth
+- sell
 
 ## intent:anekdot
 - I would like to hear a joke about [bloodsucker](anecdote_theme)
