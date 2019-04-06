@@ -39,3 +39,4 @@ templates:
 
   utter_sell:
   - text:"So, do you really want to sell sometheing?"
+  - text:"Nu davai, show what you've got"

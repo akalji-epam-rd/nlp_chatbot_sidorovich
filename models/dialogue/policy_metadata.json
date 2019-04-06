@@ -2,17 +2,11 @@
   "action_fingerprints": {
     "action_listen": {
       "slots": [
-        "info",
-        "anecdote_theme"
+        "anecdote_theme",
+        "info"
       ]
     },
-    "utter_joke": {
-      "slots": []
-    },
     "utter_goodbye": {
-      "slots": []
-    },
-    "answer_question": {
       "slots": []
     },
     "tell_an_anecdote": {
@@ -22,9 +16,15 @@
       "slots": [
         "id"
       ]
+    },
+    "utter_sell": {
+      "slots": []
+    },
+    "answer_question": {
+      "slots": []
     }
   },
-  "python": "3.6.8",
+  "python": "3.6.7",
   "max_histories": [
     5,
     null,
@@ -38,7 +38,7 @@
     "rasa_core.policies.memoization.MemoizationPolicy",
     "rasa_core.policies.form_policy.FormPolicy"
   ],
-  "trained_at": "20190405-183621",
+  "trained_at": "20190406-101552",
   "rasa_core": "0.13.5",
   "tensorflow": "1.12.0",
   "sklearn": "0.20.2"

@@ -73,8 +73,8 @@
 ## dialogue joke
 * greet
   - memory_visit
-* joke
-  - utter_joke
+* anecdote{"anecdote_theme":"bloodsucker"}
+  - tell_an_anecdote
 * goodbye
   - utter_goodbye
 

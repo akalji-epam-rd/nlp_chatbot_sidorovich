@@ -42,48 +42,16 @@
         "text": "see you later"
       },
       {
-        "intent": "joke",
-        "text": "tell me a short funny story"
+        "intent": "sell",
+        "text": "i want to sell something"
       },
       {
-        "intent": "joke",
-        "text": "Can you tell me a joke?"
+        "intent": "sell",
+        "text": "i want to sell smth"
       },
       {
-        "intent": "joke",
-        "text": "I would like to hear a joke"
-      },
-      {
-        "intent": "joke",
-        "text": "Tell me a joke"
-      },
-      {
-        "intent": "joke",
-        "text": "A joke please"
-      },
-      {
-        "intent": "joke",
-        "text": "Tell me a joke please"
-      },
-      {
-        "intent": "joke",
-        "text": "I would like to hear a joke"
-      },
-      {
-        "intent": "joke",
-        "text": "I would joke to hear a joke, please"
-      },
-      {
-        "intent": "joke",
-        "text": "Can you tell jokes?"
-      },
-      {
-        "intent": "joke",
-        "text": "Please tell me a joke"
-      },
-      {
-        "intent": "joke",
-        "text": "I need to hear a joke"
+        "intent": "sell",
+        "text": "sell"
       },
       {
         "intent": "anekdot",

@@ -1,11 +1,12 @@
 %YAML 1.1
 ---
 actions:
-- memory_visit
 - utter_goodbye
-- answer_question
 - utter_joke
+- utter_sell
 - tell_an_anecdote
+- memory_visit
+- answer_question
 config:
   store_entities_as_slots: true
 entities:
@@ -17,11 +18,11 @@ intents:
     use_entities: true
 - goodbye:
     use_entities: true
-- joke:
-    use_entities: true
 - info_question:
     use_entities: true
 - anecdote:
+    use_entities: true
+- sell:
     use_entities: true
 slots:
   anecdote_theme:
@@ -48,3 +49,6 @@ templates:
       It got inside and burned down.
   - text: A Pseudogiant learned how to breath with his ass, he sat on a tree stump
       and choked.
+  utter_sell:
+  - text: text:"So, do you really want to sell sometheing?"
+  - text: text:"Nu davai, show what you've got"
