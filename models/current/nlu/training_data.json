@@ -1,0 +1,442 @@
+{
+  "rasa_nlu_data": {
+    "common_examples": [
+      {
+        "intent": "greet",
+        "text": "hey"
+      },
+      {
+        "intent": "greet",
+        "text": "hello"
+      },
+      {
+        "intent": "greet",
+        "text": "hi"
+      },
+      {
+        "intent": "greet",
+        "text": "good morning"
+      },
+      {
+        "intent": "greet",
+        "text": "good evening"
+      },
+      {
+        "intent": "greet",
+        "text": "nu zdravstvui"
+      },
+      {
+        "intent": "goodbye",
+        "text": "bye"
+      },
+      {
+        "intent": "goodbye",
+        "text": "goodbye"
+      },
+      {
+        "intent": "goodbye",
+        "text": "see you around"
+      },
+      {
+        "intent": "goodbye",
+        "text": "see you later"
+      },
+      {
+        "intent": "sell",
+        "text": "i want to sell something"
+      },
+      {
+        "intent": "sell",
+        "text": "i want to sell smth"
+      },
+      {
+        "intent": "sell",
+        "text": "sell"
+      },
+      {
+        "intent": "anecdote",
+        "entities": [
+          {
+            "start": 34,
+            "end": 45,
+            "value": "bloodsucker",
+            "entity": "anecdote_theme"
+          }
+        ],
+        "text": "I would like to hear a joke about bloodsucker"
+      },
+      {
+        "intent": "anecdote",
+        "entities": [
+          {
+            "start": 20,
+            "end": 31,
+            "value": "pseudogiant",
+            "entity": "anecdote_theme"
+          }
+        ],
+        "text": "Tell me a joke with pseudogiant in it"
+      },
+      {
+        "intent": "anecdote",
+        "entities": [
+          {
+            "start": 18,
+            "end": 28,
+            "value": "controller",
+            "entity": "anecdote_theme"
+          }
+        ],
+        "text": "An anecdote about controller please"
+      },
+      {
+        "intent": "anecdote",
+        "entities": [
+          {
+            "start": 25,
+            "end": 30,
+            "value": "snork",
+            "entity": "anecdote_theme"
+          }
+        ],
+        "text": "Tell me an anecdote with snork  please"
+      },
+      {
+        "intent": "anecdote",
+        "entities": [
+          {
+            "start": 33,
+            "end": 38,
+            "value": "burer",
+            "entity": "anecdote_theme"
+          }
+        ],
+        "text": "I would like to hear an anecdote burer"
+      },
+      {
+        "intent": "info_question",
+        "entities": [
+          {
+            "start": 23,
+            "end": 28,
+            "value": "Otter",
+            "entity": "info"
+          }
+        ],
+        "text": "What do you know about Otter"
+      },
+      {
+        "intent": "info_question",
+        "entities": [
+          {
+            "start": 12,
+            "end": 22,
+            "value": "Generators",
+            "entity": "info"
+          }
+        ],
+        "text": "Do you know Generators"
+      },
+      {
+        "intent": "info_question",
+        "entities": [
+          {
+            "start": 22,
+            "end": 31,
+            "value": "Darkscape",
+            "entity": "info"
+          }
+        ],
+        "text": "Can you tell me about Darkscape"
+      },
+      {
+        "intent": "info_question",
+        "entities": [
+          {
+            "start": 21,
+            "end": 27,
+            "value": "Vortex",
+            "entity": "info"
+          }
+        ],
+        "text": "I want to know about Vortex"
+      },
+      {
+        "intent": "info_question",
+        "entities": [
+          {
+            "start": 18,
+            "end": 25,
+            "value": "Kazakov",
+            "entity": "info"
+          }
+        ],
+        "text": "Do you hear about Kazakov"
+      },
+      {
+        "intent": "buy",
+        "text": "buy"
+      },
+      {
+        "intent": "buy",
+        "text": "eat"
+      },
+      {
+        "intent": "buy",
+        "text": "I want to buy something"
+      },
+      {
+        "intent": "buy",
+        "text": "I want to buy smth"
+      },
+      {
+        "intent": "buy",
+        "text": "I want to eat"
+      },
+      {
+        "intent": "buy",
+        "text": "I'm hungry"
+      },
+      {
+        "intent": "buy",
+        "text": "I am hungry"
+      },
+      {
+        "intent": "buy",
+        "entities": [
+          {
+            "start": 19,
+            "end": 21,
+            "value": "10",
+            "entity": "money"
+          }
+        ],
+        "text": "What can I buy for 10 rubles?"
+      },
+      {
+        "intent": "buy",
+        "entities": [
+          {
+            "start": 19,
+            "end": 20,
+            "value": "5",
+            "entity": "money"
+          }
+        ],
+        "text": "What can I eat for 5 rubles?"
+      },
+      {
+        "intent": "buy",
+        "entities": [
+          {
+            "start": 7,
+            "end": 9,
+            "value": "50",
+            "entity": "money"
+          }
+        ],
+        "text": "I have 50 rubles, what can I eat?"
+      },
+      {
+        "intent": "buy",
+        "entities": [
+          {
+            "start": 14,
+            "end": 17,
+            "value": "100",
+            "entity": "money"
+          }
+        ],
+        "text": "What is up to 100 rubles?"
+      },
+      {
+        "intent": "buy_cost",
+        "entities": [
+          {
+            "start": 14,
+            "end": 16,
+            "value": "10",
+            "entity": "money"
+          }
+        ],
+        "text": "Approximately 10 rubles"
+      },
+      {
+        "intent": "buy_cost",
+        "entities": [
+          {
+            "start": 7,
+            "end": 9,
+            "value": "50",
+            "entity": "money"
+          }
+        ],
+        "text": "I have 50 rubles"
+      },
+      {
+        "intent": "buy_cost",
+        "entities": [
+          {
+            "start": 0,
+            "end": 3,
+            "value": "100",
+            "entity": "money"
+          }
+        ],
+        "text": "100 rubles"
+      },
+      {
+        "intent": "offer",
+        "text": "What can you offer me?"
+      },
+      {
+        "intent": "offer",
+        "text": "What do you have for me?"
+      },
+      {
+        "intent": "offer",
+        "text": "What can I get?"
+      },
+      {
+        "intent": "offer",
+        "text": "What is there for me?"
+      },
+      {
+        "intent": "offer",
+        "text": "Is there anything for me?"
+      },
+      {
+        "intent": "sleep",
+        "text": "I want sleep"
+      },
+      {
+        "intent": "sleep",
+        "text": "I want to sleep"
+      },
+      {
+        "intent": "sleep",
+        "text": "overnight stay"
+      },
+      {
+        "intent": "sleep",
+        "text": "lodging for the night"
+      },
+      {
+        "intent": "sleep",
+        "text": "I want to spend the night"
+      },
+      {
+        "intent": "sleep",
+        "text": "Can I spend the night here?"
+      },
+      {
+        "intent": "sleep",
+        "text": "Is there a bed for me?"
+      },
+      {
+        "intent": "can_hide",
+        "entities": [
+          {
+            "start": 17,
+            "end": 22,
+            "value": "Zaton",
+            "entity": "station_name"
+          }
+        ],
+        "text": "Can I get to the Zaton before the emission?"
+      },
+      {
+        "intent": "can_hide",
+        "entities": [
+          {
+            "start": 32,
+            "end": 37,
+            "value": "Zaton",
+            "entity": "station_name"
+          }
+        ],
+        "text": "Can I hide from emission at the Zaton?"
+      },
+      {
+        "intent": "can_hide",
+        "entities": [
+          {
+            "start": 18,
+            "end": 23,
+            "value": "Zaton",
+            "entity": "station_name"
+          }
+        ],
+        "text": "Can I hide at the Zaton from emission?"
+      },
+      {
+        "intent": "can_hide",
+        "entities": [
+          {
+            "start": 17,
+            "end": 22,
+            "value": "Yanov",
+            "entity": "station_name"
+          }
+        ],
+        "text": "Can I get to the Yanov before the emission?"
+      },
+      {
+        "intent": "can_hide",
+        "entities": [
+          {
+            "start": 32,
+            "end": 37,
+            "value": "Yanov",
+            "entity": "station_name"
+          }
+        ],
+        "text": "Can I hide from emission at the Yanov?"
+      },
+      {
+        "intent": "can_hide",
+        "entities": [
+          {
+            "start": 18,
+            "end": 26,
+            "value": "Hospital",
+            "entity": "station_name"
+          }
+        ],
+        "text": "Can I hide at the Hospital from emission?"
+      },
+      {
+        "intent": "where_hide",
+        "text": "Where can I hide from emission?"
+      },
+      {
+        "intent": "where_hide",
+        "text": "Soon emission, where can I hide?"
+      },
+      {
+        "intent": "where_hide",
+        "text": "What is the nearest place where I can hide from the emission?"
+      },
+      {
+        "intent": "when_was",
+        "text": "When was the last emission?"
+      },
+      {
+        "intent": "when_was",
+        "text": "When was the emission?"
+      },
+      {
+        "intent": "when_will",
+        "text": "When will be the emission?"
+      }
+    ],
+    "regex_features": [],
+    "lookup_tables": [
+      {
+        "name": "station_name",
+        "elements": "station_name.txt"
+      }
+    ],
+    "entity_synonyms": []
+  }
+}
