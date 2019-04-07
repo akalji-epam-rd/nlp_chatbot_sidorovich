@@ -92,10 +92,24 @@
 * goodbye
   - utter_goodbye
 
+## story offer
+* offer
+  - utter_offer
+ 
 ## story buy
 * buy
   - action_buy
+
+## story buy_cost
+* buy
+  - action_buy
+* buy_cost
+  - action_buy_cost
   
+## story sleep
+* sleep
+  - action_sleep
+ 
 ## can_hide story
 * can_hide
   - action_check_hideaway

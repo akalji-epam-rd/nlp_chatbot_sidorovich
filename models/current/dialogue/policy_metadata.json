@@ -2,17 +2,17 @@
   "action_fingerprints": {
     "action_listen": {
       "slots": [
-        "info",
-        "anecdote_theme"
+        "anecdote_theme",
+        "info"
       ]
     },
-    "action_check_hideaway": {
+    "action_buy_cost": {
       "slots": []
     },
     "utter_goodbye": {
       "slots": []
     },
-    "action_future_emission": {
+    "action_find_hideaway": {
       "slots": []
     },
     "action_last_emission": {
@@ -21,10 +21,13 @@
     "action_buy": {
       "slots": []
     },
-    "utter_sell": {
+    "action_sleep": {
       "slots": []
     },
-    "tell_an_anecdote": {
+    "utter_offer": {
+      "slots": []
+    },
+    "action_check_hideaway": {
       "slots": []
     },
     "memory_visit": {
@@ -32,10 +35,16 @@
         "id"
       ]
     },
-    "action_find_hideaway": {
+    "action_future_emission": {
+      "slots": []
+    },
+    "tell_an_anecdote": {
       "slots": []
     },
     "answer_question": {
+      "slots": []
+    },
+    "utter_sell": {
       "slots": []
     }
   },
@@ -53,7 +62,7 @@
     "rasa_core.policies.memoization.MemoizationPolicy",
     "rasa_core.policies.form_policy.FormPolicy"
   ],
-  "trained_at": "20190407-013021",
+  "trained_at": "20190407-233946",
   "rasa_core": "0.13.7",
   "tensorflow": "1.12.0",
   "sklearn": "0.20.2"

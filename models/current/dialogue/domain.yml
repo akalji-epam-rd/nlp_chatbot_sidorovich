@@ -12,6 +12,9 @@ actions:
 - action_last_emission
 - action_future_emission
 - action_buy
+- action_buy_cost
+- utter_offer
+- action_sleep
 config:
   store_entities_as_slots: true
 entities:
@@ -40,6 +43,12 @@ intents:
     use_entities: true
 - buy:
     use_entities: true
+- buy_cost:
+    use_entities: true
+- offer:
+    use_entities: true
+- sleep:
+    use_entities: true
 slots:
   anecdote_theme:
     auto_fill: true
@@ -50,6 +59,10 @@ slots:
     initial_value: null
     type: rasa_core.slots.TextSlot
   info:
+    auto_fill: true
+    initial_value: null
+    type: rasa_core.slots.TextSlot
+  money:
     auto_fill: true
     initial_value: null
     type: rasa_core.slots.TextSlot
@@ -73,6 +86,8 @@ templates:
       It got inside and burned down.
   - text: A Pseudogiant learned how to breath with his ass, he sat on a tree stump
       and choked.
+  utter_offer:
+  - text: You can buy food or spend the night. What do you want?
   utter_sell:
   - text: So, do you really want to sell sometheing?
   - text: Nu davai, show what you've got

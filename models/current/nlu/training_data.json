@@ -179,7 +179,7 @@
       },
       {
         "intent": "buy",
-        "text": "What can you offer me?"
+        "text": "eat"
       },
       {
         "intent": "buy",
@@ -195,11 +195,143 @@
       },
       {
         "intent": "buy",
-        "text": "I want to drink"
+        "text": "I'm hungry"
       },
       {
         "intent": "buy",
+        "text": "I am hungry"
+      },
+      {
+        "intent": "buy",
+        "entities": [
+          {
+            "start": 19,
+            "end": 21,
+            "value": "10",
+            "entity": "money"
+          }
+        ],
+        "text": "What can I buy for 10 rubles?"
+      },
+      {
+        "intent": "buy",
+        "entities": [
+          {
+            "start": 19,
+            "end": 20,
+            "value": "5",
+            "entity": "money"
+          }
+        ],
+        "text": "What can I eat for 5 rubles?"
+      },
+      {
+        "intent": "buy",
+        "entities": [
+          {
+            "start": 7,
+            "end": 9,
+            "value": "50",
+            "entity": "money"
+          }
+        ],
+        "text": "I have 50 rubles, what can I eat?"
+      },
+      {
+        "intent": "buy",
+        "entities": [
+          {
+            "start": 14,
+            "end": 17,
+            "value": "100",
+            "entity": "money"
+          }
+        ],
+        "text": "What is up to 100 rubles?"
+      },
+      {
+        "intent": "buy_cost",
+        "entities": [
+          {
+            "start": 14,
+            "end": 16,
+            "value": "10",
+            "entity": "money"
+          }
+        ],
+        "text": "Approximately 10 rubles"
+      },
+      {
+        "intent": "buy_cost",
+        "entities": [
+          {
+            "start": 7,
+            "end": 9,
+            "value": "50",
+            "entity": "money"
+          }
+        ],
+        "text": "I have 50 rubles"
+      },
+      {
+        "intent": "buy_cost",
+        "entities": [
+          {
+            "start": 0,
+            "end": 3,
+            "value": "100",
+            "entity": "money"
+          }
+        ],
+        "text": "100 rubles"
+      },
+      {
+        "intent": "offer",
+        "text": "What can you offer me?"
+      },
+      {
+        "intent": "offer",
         "text": "What do you have for me?"
+      },
+      {
+        "intent": "offer",
+        "text": "What can I get?"
+      },
+      {
+        "intent": "offer",
+        "text": "What is there for me?"
+      },
+      {
+        "intent": "offer",
+        "text": "Is there anything for me?"
+      },
+      {
+        "intent": "sleep",
+        "text": "I want sleep"
+      },
+      {
+        "intent": "sleep",
+        "text": "I want to sleep"
+      },
+      {
+        "intent": "sleep",
+        "text": "overnight stay"
+      },
+      {
+        "intent": "sleep",
+        "text": "lodging for the night"
+      },
+      {
+        "intent": "sleep",
+        "text": "I want to spend the night"
+      },
+      {
+        "intent": "sleep",
+        "text": "Can I spend the night here?"
+      },
+      {
+        "intent": "sleep",
+        "text": "Is there a bed for me?"
       },
       {
         "intent": "can_hide",

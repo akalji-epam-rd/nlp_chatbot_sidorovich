@@ -9,6 +9,9 @@ intents:
   - when_was
   - when_will
   - buy
+  - buy_cost
+  - offer
+  - sleep
 
 slots:
   id:
@@ -20,6 +23,8 @@ slots:
   station_name:
     type: text
   purhased_item:
+    type: text
+  money:
     type: text
 
 entities:
@@ -39,6 +44,9 @@ actions:
 - action_last_emission
 - action_future_emission
 - action_buy
+- action_buy_cost
+- utter_offer
+- action_sleep
 
 templates:
   utter_goodbye:
@@ -54,3 +62,6 @@ templates:
   utter_sell:
   - text: "So, do you really want to sell sometheing?"
   - text: "Nu davai, show what you've got"
+
+  utter_offer:
+  - text: "You can buy food or spend the night. What do you want?"

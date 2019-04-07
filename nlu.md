@@ -33,12 +33,37 @@
 
 ## intent:buy
 - buy
-- What can you offer me?
+- eat
 - I want to buy something
 - I want to buy smth
 - I want to eat
-- I want to drink
+- I'm hungry
+- I am hungry
+- What can I buy for [10](money) rubles?
+- What can I eat for [5](money) rubles?
+- I have [50](money) rubles, what can I eat?
+- What is up to [100](money) rubles?
+
+## intent:buy_cost
+- Approximately [10](money) rubles
+- I have [50](money) rubles
+- [100](money) rubles
+
+## intent:offer
+- What can you offer me?
 - What do you have for me?
+- What can I get?
+- What is there for me?
+- Is there anything for me?
+
+## intent:sleep
+- I want sleep
+- I want to sleep
+- overnight stay
+- lodging for the night
+- I want to spend the night
+- Can I spend the night here?
+- Is there a bed for me?
 
 ## intent:can_hide
 - Can I get to the [Zaton](station_name) before the emission?

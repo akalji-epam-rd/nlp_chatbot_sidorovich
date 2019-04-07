@@ -122,6 +122,29 @@ class ActionBuy(Action):
 
     def run(self, dispatcher, tracker, domain):
         # what your action should do
-        # item = tracker.get_slot('purhased_item')
-        dispatcher.utter_message("Nothing available")
+        money = tracker.get_slot('money')
+        if (money is None):
+            dispatcher.utter_message("How much money do you have?")
+        else:
+            dispatcher.utter_message("You have %s rubles and you can buy canned meat" % money)
+        return []
+
+
+class ActionBuyCost(Action):
+    def name(self):
+        return "action_buy_cost"
+
+    def run(self, dispatcher, tracker, domain):
+        # what your action should do
+        money = tracker.get_slot('money')
+        dispatcher.utter_message("You have %s rubles and you can buy sausage and bread" % money)
+        return []
+
+
+class ActionSleep(Action):
+    def name(self):
+        return "action_sleep"
+
+    def run(self, dispatcher, tracker, domain):
+        dispatcher.utter_message("Can not help with this, look elsewhere.")
         return []
