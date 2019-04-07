@@ -11,6 +11,8 @@ actions:
 - action_check_hideaway
 - action_last_emission
 - action_future_emission
+- utter_can_hide
+- utter_cant_hide
 config:
   store_entities_as_slots: true
 entities:
@@ -54,6 +56,14 @@ slots:
     initial_value: null
     type: rasa_core.slots.TextSlot
 templates:
+  utter_can_hide:
+  - text: You can hide in {station_name}
+  - text: Yep, stalker, you can hide here
+  - text: Ofc, you can
+  utter_cant_hide:
+  - text: You can't hide in {station_name}
+  - text: Nope, stalker, you won't keep up to get here
+  - text: No, you should find another hideaway
   utter_goodbye:
   - text: Hope to see ya again buddie
   - text: Don't lose yourself in that lands
@@ -66,5 +76,5 @@ templates:
   - text: A Pseudogiant learned how to breath with his ass, he sat on a tree stump
       and choked.
   utter_sell:
-  - text: text:"So, do you really want to sell sometheing?"
-  - text: text:"Nu davai, show what you've got"
+  - text: So, do you really want to sell sometheing?
+  - text: Nu davai, show what you've got

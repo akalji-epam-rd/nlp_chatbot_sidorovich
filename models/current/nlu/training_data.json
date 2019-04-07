@@ -268,6 +268,10 @@
       {
         "intent": "when_will",
         "text": "When will be the emission?"
+      },
+      {
+        "intent": "when_will",
+        "text": "When will be next emission?"
       }
     ],
     "regex_features": [],

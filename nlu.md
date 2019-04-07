@@ -50,6 +50,7 @@
 
 ## intent:when_will
 - When will be the emission?
+- When will be next emission?
 
 ## lookup:station_name
 station_name.txt

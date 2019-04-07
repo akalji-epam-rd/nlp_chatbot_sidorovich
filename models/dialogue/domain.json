@@ -31,6 +31,8 @@
     "prev_action_find_hideaway",
     "prev_action_check_hideaway",
     "prev_action_last_emission",
-    "prev_action_future_emission"
+    "prev_action_future_emission",
+    "prev_utter_can_hide",
+    "prev_utter_cant_hide"
   ]
 }
