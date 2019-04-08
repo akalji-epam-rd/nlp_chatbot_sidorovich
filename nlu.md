@@ -32,8 +32,6 @@
 - Do you hear about [Kazakov](info)
 
 ## intent:buy
-- buy
-- eat
 - I want to buy something
 - I want to buy smth
 - I want to eat
