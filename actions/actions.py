@@ -45,12 +45,12 @@ class MemoryVisit(Action):
         collection = db['visiting']
         time_list = list(collection.find({}))
         posts = db.visiting
-        
+
         uid = tracker.get_slot('id')
         if(uid is None):
             user_id = len(time_list) + 1
-            
-            
+
+
             st = datetime.datetime.fromtimestamp(get_time()).strftime('%Y-%m-%d %H:%M')
             print(st)
             post = {"id": str(user_id),
@@ -64,7 +64,7 @@ class MemoryVisit(Action):
             dispatcher.utter_message("Oooh, I remember your smily face. It was sooo long ago. Thanks Gods I still remember correct time. I've met you %s" % first_time)
         connection.close()
         return []
-    
+
 class AnswerQuestion(Action):
     def name(self):
         return "answer_question"
@@ -123,4 +123,38 @@ class ActionFutureEmission(Action):
 
     def run(self, dispatcher, tracker, domain):
         dispatcher.utter_message("The emission will be in {} minutes".format(60 - datetime.datetime.today().minute))
+        return []
+
+
+class ActionBuy(Action):
+    def name(self):
+        return "action_buy"
+
+    def run(self, dispatcher, tracker, domain):
+        # what your action should do
+        money = tracker.get_slot('money')
+        if (money is None):
+            dispatcher.utter_message("How much money do you have?")
+        else:
+            dispatcher.utter_message("You have %s rubles and you can buy canned meat" % money)
+        return []
+
+
+class ActionBuyCost(Action):
+    def name(self):
+        return "action_buy_cost"
+
+    def run(self, dispatcher, tracker, domain):
+        # what your action should do
+        money = tracker.get_slot('money')
+        dispatcher.utter_message("You have %s rubles and you can buy sausage and bread" % money)
+        return []
+
+
+class ActionSleep(Action):
+    def name(self):
+        return "action_sleep"
+
+    def run(self, dispatcher, tracker, domain):
+        dispatcher.utter_message("Can not help with this, look elsewhere.")
         return []
