@@ -47,6 +47,8 @@ actions:
 - action_buy_cost
 - utter_offer
 - action_sleep
+- utter_can_hide
+- utter_cant_hide
 
 templates:
   utter_goodbye:
@@ -65,3 +67,13 @@ templates:
 
   utter_offer:
   - text: "You can buy food or spend the night. What do you want?"
+
+  utter_can_hide:
+  - text: "You can hide in {station_name}"
+  - text: "Yep, stalker, you can hide here"
+  - text: "Ofc, you can"
+
+  utter_cant_hide:
+  - text: "You can't hide in {station_name}"
+  - text: "Nope, stalker, you won't keep up to get here"
+  - text: "No, you should find another hideaway"
