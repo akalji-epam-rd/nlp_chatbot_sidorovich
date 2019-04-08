@@ -4,6 +4,10 @@ intents:
   - info_question
   - anecdote
   - sell
+  - can_hide
+  - where_hide
+  - when_was
+  - when_will
 
 slots:
   id:
@@ -11,6 +15,8 @@ slots:
   info:
     type: text
   anecdote_theme:
+    type: text
+  station_name:
     type: text
 
 entities:
@@ -24,6 +30,12 @@ actions:
 - tell_an_anecdote
 - memory_visit
 - answer_question
+- action_find_hideaway
+- action_check_hideaway
+- action_last_emission
+- action_future_emission
+- utter_can_hide
+- utter_cant_hide
 
 templates:
   utter_goodbye:
@@ -37,5 +49,15 @@ templates:
   - text: "A Pseudogiant learned how to breath with his ass, he sat on a tree stump and choked."
 
   utter_sell:
-  - text:"So, do you really want to sell sometheing?"
-  - text:"Nu davai, show what you've got"
+  - text: "So, do you really want to sell sometheing?"
+  - text: "Nu davai, show what you've got"
+
+  utter_can_hide:
+  - text: "You can hide in {station_name}"
+  - text: "Yep, stalker, you can hide here"
+  - text: "Ofc, you can"
+
+  utter_cant_hide:
+  - text: "You can't hide in {station_name}"
+  - text: "Nope, stalker, you won't keep up to get here"
+  - text: "No, you should find another hideaway"

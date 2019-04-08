@@ -10,6 +10,7 @@ import json
 import pymongo
 import datetime
 import time
+import random
 from bson.objectid import ObjectId
 from pymongo import MongoClient
 import pprint
@@ -72,4 +73,54 @@ class AnswerQuestion(Action):
         # what your action should do
         info = tracker.get_slot('info')
         dispatcher.utter_message("Yea, I can tell you a lot of things about %s" % info)
+        return []
+
+
+class ActionFindHideaway(Action):
+    def name(self):
+        return "action_find_hideaway"
+
+    def run(self, dispatcher, tracker, domain):
+        connection = MongoClient("ds127376.mlab.com", 27376)
+        db = connection["chatbot"]
+        db.authenticate("rasaguy", "rasabot1")
+        collection = db['stations']
+
+        stations = [document['station_name'] for document in collection.find()]
+        selected_station = random.choice(stations)
+        dispatcher.utter_message("You can hide in {}".format(selected_station))
+        connection.close()
+
+        return []
+
+
+class ActionCheckHideaway(Action):
+    def name(self):
+        return "action_check_hideaway"
+
+    def run(self, dispatcher, tracker, domain):
+        is_can = random.choice([True, False])
+        if is_can:
+            dispatcher.utter_template("utter_can_hide", tracker)
+        else:
+            dispatcher.utter_template("utter_cant_hide", tracker)
+
+        return []
+
+
+class ActionLastEmission(Action):
+    def name(self):
+        return "action_last_emission"
+
+    def run(self, dispatcher, tracker, domain):
+        dispatcher.utter_message("Last emission was {} minutes ago".format(datetime.datetime.today().minute))
+        return []
+
+
+class ActionFutureEmission(Action):
+    def name(self):
+        return "action_future_emission"
+
+    def run(self, dispatcher, tracker, domain):
+        dispatcher.utter_message("The emission will be in {} minutes".format(60 - datetime.datetime.today().minute))
         return []
