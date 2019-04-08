@@ -387,6 +387,7 @@ Webhook Setup Successful
 Rasa Core server is up and running on http://localhost:5005
 Rasa process starting
 Added 'nlp_spacy' to component cache. Key 'nlp_spacy-en'.
+<<<<<<< HEAD
 Rasa Core server is up and running on http://localhost:5005
 Rasa process starting
 Added 'nlp_spacy' to component cache. Key 'nlp_spacy-en'.
@@ -1195,3 +1196,27 @@ Failed to use action 'action_buy' in history. Please make sure all actions are l
 Failed to use action 'action_buy' in history. Please make sure all actions are listed in the domains action list. If you recently removed an action, don't worry about this warning. It should stop appearing after a while. 
 Failed to use action 'action_buy' in history. Please make sure all actions are listed in the domains action list. If you recently removed an action, don't worry about this warning. It should stop appearing after a while. 
 Failed to use action 'action_buy' in history. Please make sure all actions are listed in the domains action list. If you recently removed an action, don't worry about this warning. It should stop appearing after a while. 
+=======
+Webhook Setup Successful
+Rasa Core server is up and running on http://localhost:5005
+Failed to run custom action 'tell_an_anecdote'. Action server responded with a non 200 status code of 500. Make sure your action server properly runs actions and returns a 200 once the action is executed. Error: 500 Server Error: INTERNAL SERVER ERROR for url: http://localhost:5055/webhook
+Encountered an exception while running action 'tell_an_anecdote'. Bot will continue, but the actions events are lost. Make sure to fix the exception in your custom code.
+Rasa process starting
+Added 'nlp_spacy' to component cache. Key 'nlp_spacy-en'.
+Webhook Setup Successful
+Rasa Core server is up and running on http://localhost:5005
+Rasa process starting
+Added 'nlp_spacy' to component cache. Key 'nlp_spacy-en'.
+Webhook Setup Successful
+Rasa Core server is up and running on http://localhost:5005
+Rasa process starting
+Added 'nlp_spacy' to component cache. Key 'nlp_spacy-en'.
+Webhook Setup Successful
+Rasa Core server is up and running on http://localhost:5005
+Failed to run custom action 'memory_visit'. Action server responded with a non 200 status code of 500. Make sure your action server properly runs actions and returns a 200 once the action is executed. Error: 500 Server Error: INTERNAL SERVER ERROR for url: http://localhost:5055/webhook
+Encountered an exception while running action 'memory_visit'. Bot will continue, but the actions events are lost. Make sure to fix the exception in your custom code.
+Failed to run custom action 'memory_visit'. Action server responded with a non 200 status code of 500. Make sure your action server properly runs actions and returns a 200 once the action is executed. Error: 500 Server Error: INTERNAL SERVER ERROR for url: http://localhost:5055/webhook
+Encountered an exception while running action 'memory_visit'. Bot will continue, but the actions events are lost. Make sure to fix the exception in your custom code.
+Failed to run custom action 'memory_visit'. Action server responded with a non 200 status code of 500. Make sure your action server properly runs actions and returns a 200 once the action is executed. Error: 500 Server Error: INTERNAL SERVER ERROR for url: http://localhost:5055/webhook
+Encountered an exception while running action 'memory_visit'. Bot will continue, but the actions events are lost. Make sure to fix the exception in your custom code.
+>>>>>>> master
