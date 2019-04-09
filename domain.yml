@@ -2,6 +2,7 @@
 intents:
   - greet
   - goodbye
+  - sell
 
 slots:
   id:
@@ -16,10 +17,12 @@ actions:
 - memory_visit
 - utter_goodbye
 - answer_question
+- utter_sell
+- sell_request
 
 templates:
   utter_goodbye:
   - text: "Hope to see ya again buddie"
   - text: "Don't lose yourself in that lands"
   utter_sell:
-  - text:"So, do you really want to sell sometheing?"
+  - text: "So, do you really want to sell sometheing?"

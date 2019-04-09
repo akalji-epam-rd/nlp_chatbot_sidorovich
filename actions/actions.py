@@ -18,9 +18,11 @@ from rasa_core_sdk.events import SlotSet
 
 logger = logging.getLogger(__name__)
 
+
 def get_time():
     ts = time.time()
     return ts
+
 
 class MemoryVisit(Action):
     def name(self):
@@ -34,26 +36,27 @@ class MemoryVisit(Action):
         collection = db['visiting']
         time_list = list(collection.find({}))
         posts = db.visiting
-        
+
         uid = tracker.get_slot('id')
-        if(uid is None):
+        if (uid is None):
             user_id = len(time_list) + 1
-            
-            
+
             st = datetime.datetime.fromtimestamp(get_time()).strftime('%Y-%m-%d %H:%M')
             print(st)
             post = {"id": str(user_id),
-                     "first_time": st}
+                    "first_time": st}
             posts.insert_one(post)
             dispatcher.utter_message("Finally! A newcomer! I'm so tired of that ugly faces around")
             return [SlotSet('id', str(user_id))]
         else:
             u_inf = collection.find_one({"id": uid})
             first_time = u_inf['first_time']
-            dispatcher.utter_message("Oooh, I remember your smily face. It was sooo long ago. Thanks Gods I still remember correct time. I've met you %s" % first_time)
+            dispatcher.utter_message(
+                "Oooh, I remember your smily face. It was sooo long ago. Thanks Gods I still remember correct time. I've met you %s" % first_time)
         connection.close()
         return []
-    
+
+
 class AnswerQuestion(Action):
     def name(self):
         return "answer_question"
@@ -62,4 +65,14 @@ class AnswerQuestion(Action):
         # what your action should do
         info = tracker.get_slot('info')
         dispatcher.utter_message("Yea, I can tell you a lot of things about %s" % info)
+        return []
+
+
+class SellRequest(Action):
+    def name(self):
+        return "sell_request"
+
+    def run(self, dispatcher, tracker, domain):
+        info = tracker.get_slot('info')
+        dispatcher.utter_message("So, do you really want to sell %s" % info)
         return []

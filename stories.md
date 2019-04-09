@@ -15,8 +15,8 @@
   - slot{"id" : "19"}
   
 ## story 4
-* sell
- - utter_sell
+* sell{"info":"Otter"}
+ - sell_request
 
 ## story 4
 * greet
