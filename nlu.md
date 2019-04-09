@@ -83,19 +83,27 @@
 - Can I get to the [Yanov](station_name) before the emission?
 - Can I hide from emission at the [Yanov](station_name)?
 - Can I hide at the [Hospital](station_name) from emission?
+- Can I get to the [Skadovsk](station_name) before the emission?
 
 ## intent:where_hide
 - Where can I hide from emission?
 - Soon emission, where can I hide?
 - What is the nearest place where I can hide from the emission?
+- Where can I hide?
+- Greetings. where can I hide?
 
 ## intent:when_was
 - When was the last emission?
 - When was the emission?
+- Okay, when was the emission?
+- And when was the emission?
 
 ## intent:when_will
 - When will be the emission?
 - When will be next emission?
+- Okay, whe will be the emission?
+- When emission?
+- And when will be the emission?
 
 ## lookup:station_name
 station_name.txt
