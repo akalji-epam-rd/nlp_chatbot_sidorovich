@@ -18,10 +18,15 @@ slots:
     type: text
   station_name:
     type: text
+  purhased_item:
+    type: text
+  money:
+    type: text
 
 entities:
 - info
-- anecdote_theme    
+- anecdote_theme
+- purchased_item   
 
 actions:
 - utter_goodbye

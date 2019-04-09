@@ -10,6 +10,7 @@ import json
 import pymongo
 import datetime
 import time
+import random
 from bson.objectid import ObjectId
 from pymongo import MongoClient
 import pprint
@@ -35,7 +36,9 @@ class StalkerAnecdote(Action):
         dispatcher.utter_button_template('utter_joke', buttons,tracker)
         return []
 
+
 '''
+
 class MemoryVisit(Action):
     def name(self):
         return "memory_visit"
@@ -48,12 +51,12 @@ class MemoryVisit(Action):
         collection = db['visiting']
         time_list = list(collection.find({}))
         posts = db.visiting
-        
+
         uid = tracker.get_slot('id')
         if(uid is None):
             user_id = len(time_list) + 1
-            
-            
+
+
             st = datetime.datetime.fromtimestamp(get_time()).strftime('%Y-%m-%d %H:%M')
             print(st)
             post = {"id": str(user_id),
@@ -67,7 +70,9 @@ class MemoryVisit(Action):
             dispatcher.utter_message("Oooh, I remember your smily face. It was sooo long ago. Thanks Gods I still remember correct time. I've met you %s" % first_time)
         connection.close()
         return []
+
 '''
+
 
 class AnswerQuestion(Action):
     def name(self):
@@ -165,3 +170,4 @@ class ActionSleep(Action):
     def run(self, dispatcher, tracker, domain):
         dispatcher.utter_message("Can not help with this, look elsewhere.")
         return []
+
