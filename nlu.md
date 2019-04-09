@@ -6,6 +6,19 @@
 - good evening
 - nu zdravstvui
 
+## intent:describe
+- what can i do there
+- what can you show me
+- what services do you have
+- i want to know about all services
+- what services do you provide
+- what is that place
+
+## intent:laugh
+- ha
+- haha
+- hahaha
+
 ## intent:goodbye
 - bye
 - goodbye
@@ -86,3 +99,4 @@
 
 ## lookup:station_name
 station_name.txt
+
