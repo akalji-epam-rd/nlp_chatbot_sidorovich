@@ -19,10 +19,6 @@ from rasa_core_sdk.events import SlotSet
 
 logger = logging.getLogger(__name__)
 
-def get_time():
-    ts = time.time()
-    return ts
-
 class StalkerAnecdote(Action):
     def name(self):
         return 'tell_an_anecdote'
@@ -30,8 +26,18 @@ class StalkerAnecdote(Action):
         theme = tracker.get_slot('anecdote_theme')
         dispatcher.utter_message('There should be funny anecdote with ' + theme)
         dispatcher.utter_message('But take this instead')
-        dispatcher.utter_template('utter_joke', tracker)
+        buttons = []
+        laugh = ""
+        for i in range(3):
+            laugh = (laugh + "ha")
+            title = (laugh)
+            payload = ("/laugh")
+            buttons.append({"title": title, "payload": payload})
+        dispatcher.utter_button_template('utter_joke', buttons,tracker)
         return []
+
+
+'''
 
 class MemoryVisit(Action):
     def name(self):
@@ -65,6 +71,9 @@ class MemoryVisit(Action):
         connection.close()
         return []
 
+'''
+
+
 class AnswerQuestion(Action):
     def name(self):
         return "answer_question"
@@ -72,7 +81,10 @@ class AnswerQuestion(Action):
     def run(self, dispatcher, tracker, domain):
         # what your action should do
         info = tracker.get_slot('info')
-        dispatcher.utter_message("Yea, I can tell you a lot of things about %s" % info)
+        if(info is None):
+            dispatcher.utter_message("Okey, what things do you want to find out about?")
+        else:    
+            dispatcher.utter_message("Yea, I can tell you a lot of things about %s" % info)
         return []
 
 
@@ -158,3 +170,4 @@ class ActionSleep(Action):
     def run(self, dispatcher, tracker, domain):
         dispatcher.utter_message("Can not help with this, look elsewhere.")
         return []
+
