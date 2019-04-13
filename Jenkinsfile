@@ -1,10 +1,4 @@
 pipeline {
-    agent {
-        node {
-            label 'server'
-            customWorkspace '/home/centos/rasa/innkeeper_rasabot'
-        }
-    }
     environment {
         projectFolder = "/home/centos/rasa/"
         gitRepoName = "innkeeper_rasabot"
