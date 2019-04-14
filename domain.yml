@@ -33,6 +33,7 @@ entities:
 - purchased_item   
 
 actions:
+- action_goodbye
 - utter_goodbye
 - utter_joke
 - utter_sell
@@ -57,7 +58,7 @@ templates:
   utter_greet:
   - text: "Hello, Stalker. You are first time there as I can see."
     buttons:
-    - title: "What services do you provide?"
+    - title: "What services do you provide"
       payload: "/describe"
   
   utter_describe:

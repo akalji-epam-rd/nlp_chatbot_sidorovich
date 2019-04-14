@@ -9,13 +9,15 @@
 ## ask_question
 * info_question{"info":"Otter"}
   - answer_question
+  - slot{"info": null}
 
 ## anec_
-* anecdote{"anecdote_theme":"bloodsucker"}
+* anecdote{"anecdote_theme":"mutant"}
   - tell_an_anecdote
+  - slot{"anecdote_theme": null}
 * laugh
   - utter_not_fun
-  
+
 ## not fun
 * laugh
   - utter_not_fun
@@ -26,7 +28,7 @@
 
 ## say goodbye
 * goodbye
-  - utter_goodbye
+  - action_goodbye
 
 ## story offer
 * offer
