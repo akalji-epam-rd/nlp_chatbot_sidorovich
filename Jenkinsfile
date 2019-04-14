@@ -6,7 +6,7 @@ pipeline {
         }
     }
     environment {
-        projectFolder = "/home/centos/rasa/"
+        projectFolder = "/home/centos/rasa"
         gitRepoName = "innkeeper_rasabot"
         scmPath = "${projectFolder}/${gitRepoName}"
       
