@@ -13,6 +13,7 @@
 - i want to know about all services
 - what services do you provide
 - what is that place
+- what services can you provide
 
 ## intent:laugh
 - ha
@@ -24,6 +25,14 @@
 - goodbye
 - see you around
 - see you later
+- leaving
+- talk to you soon
+- have to go
+- got to go
+- talk to you later
+- heading out
+- im leaving now
+- going out
 
 ## intent:sell
 - i want to sell something
@@ -31,11 +40,12 @@
 - sell
 
 ## intent:anecdote
-- I would like to hear a joke about [bloodsucker](anecdote_theme)
-- Tell me a joke with [pseudogiant](anecdote_theme) in it
-- An anecdote about [controller](anecdote_theme) please
-- Tell me an anecdote with [snork](anecdote_theme)  please
-- I would like to hear an anecdote [burer](anecdote_theme)
+- I would like to hear a joke about [mutant](anecdote_theme)
+- Tell me a joke with [monstr](anecdote_theme) in it
+- An anecdote about [person](anecdote_theme) please
+- Tell me an anecdote with [zone](anecdote_theme)  please
+- I would like to hear an anecdote [chernobyle](anecdote_theme)
+- Tell me a joke about [bear](anecdote_theme)
 
 ## intent:info_question
 - What do you know about [Otter](info)
@@ -107,4 +117,3 @@
 
 ## lookup:station_name
 station_name.txt
-
