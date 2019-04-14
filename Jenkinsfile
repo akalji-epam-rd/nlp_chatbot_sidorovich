@@ -41,7 +41,7 @@ pipeline {
                 sh "sudo mkdir -p ${logFolder}"
                 sh "sudo chown ${user}:${user} ${logFolder}"
                 
-                sh "sudo virtualenv venv --python=python3"
+                sh "sudo virtualenv venv --python=python3.6"
                 sh "sudo ${venvBin}/pip3.6 install -r ${modules}"
             }
         }
