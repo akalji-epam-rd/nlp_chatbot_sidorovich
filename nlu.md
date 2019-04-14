@@ -59,6 +59,8 @@
 - Approximately [10](money) rubles
 - I have [50](money) rubles
 - [100](money) rubles
+- [10](money) rubles
+- [100](money)
 
 ## intent:offer
 - What can you offer me?
@@ -66,6 +68,8 @@
 - What can I get?
 - What is there for me?
 - Is there anything for me?
+- What can I spend money on?
+- How can I use my money?
 
 ## intent:sleep
 - I want sleep

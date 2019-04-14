@@ -19,9 +19,11 @@ from rasa_core_sdk.events import SlotSet
 
 logger = logging.getLogger(__name__)
 
+
 class StalkerAnecdote(Action):
     def name(self):
         return 'tell_an_anecdote'
+
     def run(self, dispatcher, tracker, domain):
         theme = tracker.get_slot('anecdote_theme')
         dispatcher.utter_message('There should be funny anecdote with ' + theme)
@@ -33,7 +35,7 @@ class StalkerAnecdote(Action):
             title = (laugh)
             payload = ("/laugh")
             buttons.append({"title": title, "payload": payload})
-        dispatcher.utter_button_template('utter_joke', buttons,tracker)
+        dispatcher.utter_button_template('utter_joke', buttons, tracker)
         return []
 
 
@@ -81,9 +83,9 @@ class AnswerQuestion(Action):
     def run(self, dispatcher, tracker, domain):
         # what your action should do
         info = tracker.get_slot('info')
-        if(info is None):
+        if (info is None):
             dispatcher.utter_message("Okey, what things do you want to find out about?")
-        else:    
+        else:
             dispatcher.utter_message("Yea, I can tell you a lot of things about %s" % info)
         return []
 
@@ -157,10 +159,12 @@ class ActionBuyCost(Action):
         return "action_buy_cost"
 
     def run(self, dispatcher, tracker, domain):
-        # what your action should do
         money = tracker.get_slot('money')
-        dispatcher.utter_message("You have %s rubles and you can buy sausage and bread" % money)
-        return []
+        if (int(money) >= 10):
+            dispatcher.utter_message("Then the bed for the night is yours1.")
+        else:
+            dispatcher.utter_message("Can not help with this, look elsewhere1.")
+        return [SlotSet("money", None)]
 
 
 class ActionSleep(Action):
@@ -168,6 +172,22 @@ class ActionSleep(Action):
         return "action_sleep"
 
     def run(self, dispatcher, tracker, domain):
-        dispatcher.utter_message("Can not help with this, look elsewhere.")
-        return []
+        money = tracker.get_slot('money')
+        if (money is None):
+            dispatcher.utter_message("Well, how much money do you have?")
+        else:
+            if (int(money) >= 10):
+                dispatcher.utter_message("Then the bed for the night is yours.")
+            else:
+                dispatcher.utter_message("Can not help with this, look elsewhere.")
+            return [SlotSet("money", None)]
+        return [SlotSet("money", None)]
 
+
+class ActionCheck(Action):
+    def name(self):
+        return "action_check"
+
+    def run(self, dispatcher, tracker, domain):
+        dispatcher.utter_message("And why are you telling me this?")
+        return []

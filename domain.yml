@@ -8,6 +8,10 @@ intents:
   - where_hide
   - when_was
   - when_will
+  - buy
+  - buy_cost
+  - offer
+  - sleep
 
 slots:
   id:
@@ -47,6 +51,7 @@ actions:
 - action_sleep
 - utter_can_hide
 - utter_cant_hide
+- action_check
 
 templates:
   utter_greet:
@@ -74,6 +79,9 @@ templates:
   utter_sell:
   - text: "So, do you really want to sell sometheing?"
   - text: "Nu davai, show what you've got"
+
+  utter_offer:
+  - text: "You can buy food or spend the night. What do you want?"
 
   utter_can_hide:
   - text: "You can hide in {station_name}"
