@@ -87,7 +87,7 @@ class AnswerQuestion(Action):
         else:    
             es = Elasticsearch()
             res = es.search(index="desc", body = {"query": {"match":{'title': info}}})
-            if(res['hits']['total']['value'] == 0):
+            if(res['hits']['total']['value'] is 0):
                 dispatcher.utter_message("I don't know about that thing. May be it has different name. Try again.")
             else:
                 dispatcher.utter_message("Yea, I can tell you a lot of things about %s" % info)
