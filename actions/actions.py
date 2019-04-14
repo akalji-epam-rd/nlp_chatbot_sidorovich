@@ -16,6 +16,8 @@ from pymongo import MongoClient
 import pprint
 from rasa_core_sdk import Action
 from rasa_core_sdk.events import SlotSet
+from rasa_core_sdk.events import AllSlotsReset
+from elasticsearch import Elasticsearch
 
 logger = logging.getLogger(__name__)
 
@@ -24,8 +26,6 @@ class StalkerAnecdote(Action):
         return 'tell_an_anecdote'
     def run(self, dispatcher, tracker, domain):
         theme = tracker.get_slot('anecdote_theme')
-        dispatcher.utter_message('There should be funny anecdote with ' + theme)
-        dispatcher.utter_message('But take this instead')
         buttons = []
         laugh = ""
         for i in range(3):
@@ -33,12 +33,15 @@ class StalkerAnecdote(Action):
             title = (laugh)
             payload = ("/laugh")
             buttons.append({"title": title, "payload": payload})
-        dispatcher.utter_button_template('utter_joke', buttons,tracker)
-        return []
-
+        if(theme is None):
+            dispatcher.utter_button_template('utter_joke', buttons,tracker)
+        else:
+            dispatcher.utter_message('There should be funny anecdote with ' + theme)
+            dispatcher.utter_message('But take this instead')
+            dispatcher.utter_button_template('utter_joke', buttons,tracker)
+        return [SlotSet('anecdote_theme', None)]
 
 '''
-
 class MemoryVisit(Action):
     def name(self):
         return "memory_visit"
@@ -51,12 +54,12 @@ class MemoryVisit(Action):
         collection = db['visiting']
         time_list = list(collection.find({}))
         posts = db.visiting
-
+        
         uid = tracker.get_slot('id')
         if(uid is None):
             user_id = len(time_list) + 1
-
-
+            
+            
             st = datetime.datetime.fromtimestamp(get_time()).strftime('%Y-%m-%d %H:%M')
             print(st)
             post = {"id": str(user_id),
@@ -70,9 +73,7 @@ class MemoryVisit(Action):
             dispatcher.utter_message("Oooh, I remember your smily face. It was sooo long ago. Thanks Gods I still remember correct time. I've met you %s" % first_time)
         connection.close()
         return []
-
 '''
-
 
 class AnswerQuestion(Action):
     def name(self):
@@ -82,10 +83,17 @@ class AnswerQuestion(Action):
         # what your action should do
         info = tracker.get_slot('info')
         if(info is None):
-            dispatcher.utter_message("Okey, what things do you want to find out about?")
+            dispatcher.utter_message("I don't know what are you talking about. Try again.")
         else:    
-            dispatcher.utter_message("Yea, I can tell you a lot of things about %s" % info)
-        return []
+            es = Elasticsearch()
+            res = es.search(index="desc", body = {"query": {"match":{'title': info}}})
+            if(res['hits']['total']['value'] == 0):
+                dispatcher.utter_message("I don't know about that thing. May be it has different name. Try again.")
+            else:
+                dispatcher.utter_message("Yea, I can tell you a lot of things about %s" % info)
+                for item in res['hits']['hits']:
+                    dispatcher.utter_message(item['_source']['description'])
+        return [SlotSet('info', None)]
 
 
 class ActionFindHideaway(Action):
@@ -170,4 +178,12 @@ class ActionSleep(Action):
     def run(self, dispatcher, tracker, domain):
         dispatcher.utter_message("Can not help with this, look elsewhere.")
         return []
-
+    
+class Bye(Action):
+    def name(self):
+        return "action_goodbye"
+    
+    def run(self, dispatcher, tracker, domain):
+        dispatcher.utter_template('utter_goodbye', tracker)
+        return [AllSlotsReset()]
+        
