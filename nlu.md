@@ -127,6 +127,3 @@
 - Okay, whe will be the emission?
 - When emission?
 - And when will be the emission?
-
-## lookup:station_name
-station_name.txt

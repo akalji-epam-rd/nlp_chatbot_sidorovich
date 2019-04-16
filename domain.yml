@@ -87,11 +87,10 @@ templates:
   - text: "You can buy food or spend the night. What do you want?"
 
   utter_can_hide:
-  - text: "You can hide in {station_name}"
   - text: "Yep, stalker, you can hide here"
-  - text: "Ofc, you can"
+  - text: "Yep, you can, but you should hurry"
+  - text: "Yes', but the emission will be soon"
 
   utter_cant_hide:
-  - text: "You can't hide in {station_name}"
   - text: "Nope, stalker, you won't keep up to get here"
   - text: "No, you should find another hideaway"

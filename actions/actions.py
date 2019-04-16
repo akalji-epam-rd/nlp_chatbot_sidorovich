@@ -119,6 +119,28 @@ class ActionCheckHideaway(Action):
         return "action_check_hideaway"
 
     def run(self, dispatcher, tracker, domain):
+        connection = MongoClient("ds127376.mlab.com", 27376)
+        db = connection["chatbot"]
+        db.authenticate("rasaguy", "rasabot1")
+        collection = db['stations']
+        stations = [document['station_name'].lower() for document in collection.find()]
+        connection.close()
+
+        station_name = tracker.get_slot('station_name')
+        station_name = station_name.lower() if station_name else None
+
+        if station_name is None:
+            dispatcher.utter_message("hmm, I don't know this place")
+
+        if station_name not in stations:
+            for true_station in stations:
+                n_diffs = sum(1 for a, b in zip(station_name, true_station) if a != b)
+                if n_diffs == 1:
+                    dispatcher.utter_message("Maybe you mean {}? Then you should hurry because emission will be in {} minutes".format(true_station, 60 - datetime.datetime.today().minute))
+                    return []
+            dispatcher.utter_message("hmm, I don't know this place")
+            return []
+
         is_can = random.choice([True, False])
         if is_can:
             dispatcher.utter_template("utter_can_hide", tracker)
