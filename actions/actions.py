@@ -84,7 +84,7 @@ class AnswerQuestion(Action):
         info = tracker.get_slot('info')
         if(info is None):
             dispatcher.utter_message("I don't know what are you talking about. Try again.")
-        else:    
+        else:
             es = Elasticsearch()
             res = es.search(index="desc", body = {"query": {"match":{'title': info}}})
             if(res['hits']['total']['value'] == 0):
@@ -151,13 +151,49 @@ class ActionBuy(Action):
         return "action_buy"
 
     def run(self, dispatcher, tracker, domain):
-        # what your action should do
         money = tracker.get_slot('money')
-        if (money is None):
-            dispatcher.utter_message("How much money do you have?")
+        food = [["bread", 5], ["canned food", 15], ["sausage", 25], ["vodka", 35], ["energy drink", 45]]
+        if money is None:
+            t = ""
+            for i in range(len(food)):
+                if i > 0:
+                    t += ", "
+                t += food[i][0]
+            dispatcher.utter_message("What would you like to buy? I have %s." % t)
         else:
-            dispatcher.utter_message("You have %s rubles and you can buy canned meat" % money)
+            t = ""
+            for i in range(len(food)):
+                if int(money) >= food[i][1]:
+                    if i > 0:
+                        t += ", "
+                    t += food[i][0]
+            if t is "":
+                dispatcher.utter_message("You don't have enough")
+            else:
+                dispatcher.utter_message("With this money you can buy %s. What will you choose?" % t)
         return []
+
+
+class ActionFoodSelect(Action):
+    def name(self):
+        return "action_food_select"
+
+    def run(self, dispatcher, tracker, domain):
+        item = tracker.get_slot('purchased_item')
+        money = tracker.get_slot('money')
+        if money is None:
+            dispatcher.utter_message("If you want %s, tell me how much money will you give?" % item)
+        else:
+            food = {"bread": 5, "canned food": 15, "sausage": 25, "vodka": 35, "energy drink": 45}
+            d = food.get(item)
+            if d is None:
+                dispatcher.utter_message("This is not available.")
+            else:
+                if int(money) >= food[item]:
+                    dispatcher.utter_message("Take it.")
+                else:
+                    dispatcher.utter_message("You don't have enough. It costs at least %s rubles." % food[item])
+        return [SlotSet("money", None)]
 
 
 class ActionBuyCost(Action):
@@ -165,10 +201,12 @@ class ActionBuyCost(Action):
         return "action_buy_cost"
 
     def run(self, dispatcher, tracker, domain):
-        # what your action should do
         money = tracker.get_slot('money')
-        dispatcher.utter_message("You have %s rubles and you can buy sausage and bread" % money)
-        return []
+        if int(money) >= 10:
+            dispatcher.utter_message("Then the bed for the night is yours.")
+        else:
+            dispatcher.utter_message("Can not help with this, look elsewhere.")
+        return [SlotSet("money", None)]
 
 
 class ActionSleep(Action):
@@ -176,14 +214,23 @@ class ActionSleep(Action):
         return "action_sleep"
 
     def run(self, dispatcher, tracker, domain):
-        dispatcher.utter_message("Can not help with this, look elsewhere.")
+        dispatcher.utter_message("Well, how much money do you have?")
+        return [SlotSet("money", None)]
+
+
+class ActionCheck(Action):
+    def name(self):
+        return "action_check"
+
+    def run(self, dispatcher, tracker, domain):
+        dispatcher.utter_message("And why are you telling me this?")
         return []
-    
+
+
 class Bye(Action):
     def name(self):
         return "action_goodbye"
-    
+
     def run(self, dispatcher, tracker, domain):
         dispatcher.utter_template('utter_goodbye', tracker)
         return [AllSlotsReset()]
-        
