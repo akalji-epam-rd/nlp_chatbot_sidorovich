@@ -34,11 +34,14 @@
 * offer
   - utter_offer
  
-## story buy_cost
-* buy{"money": null}
-  - action_sleep
+## story buy
+* buy
+  - action_buy
+* food_select
+  - action_food_select
+  - slot{"money" : null}
 * buy_cost
-  - action_buy_cost
+  - action_food_select
   - slot{"money" : null}
 
 ## story buy_cost2

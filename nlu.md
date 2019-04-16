@@ -70,7 +70,16 @@
 - I have [50](money) rubles
 - [100](money) rubles
 - [10](money) rubles
-- [100](money)
+- [30](money)
+- About [15](money)
+
+## intent:food_select
+- I want [bread](purchased_item)
+- [vodka](purchased_item)
+- Give me [sausage](purchased_item)
+- I would take [energy drink](purchased_item)
+- I would eat [canned food](purchased_item)
+
 
 ## intent:offer
 - What can you offer me?

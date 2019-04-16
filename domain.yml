@@ -12,6 +12,7 @@ intents:
   - buy_cost
   - offer
   - sleep
+  - food_select
 
 slots:
   id:
@@ -22,7 +23,7 @@ slots:
     type: text
   station_name:
     type: text
-  purhased_item:
+  purchased_item:
     type: text
   money:
     type: text
@@ -46,13 +47,14 @@ actions:
 - action_check_hideaway
 - action_last_emission
 - action_future_emission
-- action_buy
-- action_buy_cost
-- utter_offer
 - action_sleep
 - utter_can_hide
 - utter_cant_hide
+- action_buy
+- action_buy_cost
+- utter_offer
 - action_check
+- action_food_select
 
 templates:
   utter_greet:
