@@ -36,8 +36,22 @@
 
 ## intent:sell
 - i want to sell something
+- I want to sell smth
+- I want to sell something
 - i want to sell smth
 - sell
+
+## intent:sell_Night_Star
+- I want to sell Night Star
+- I want to sell night star
+- Night Star
+- night star
+
+## intent: sell_Sparkler
+- I want to sell Sparkler
+- I want to sell sparkler
+- Sparkler
+- sparkler
 
 ## intent:anecdote
 - I would like to hear a joke about [mutant](anecdote_theme)

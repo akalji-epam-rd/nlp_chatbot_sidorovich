@@ -8,6 +8,8 @@ intents:
   - where_hide
   - when_was
   - when_will
+  - sell_Night_Star
+  - sell_Sparkler
 
 slots:
   id:
@@ -33,6 +35,8 @@ actions:
 - utter_goodbye
 - utter_joke
 - utter_sell
+- utter_sell_Night_Star
+- utter_sell_Sparkler
 - tell_an_anecdote
 - utter_not_fun
 - utter_greet
@@ -73,8 +77,17 @@ templates:
   - text: "But that's not even funny."
   
   utter_sell:
-  - text: "So, do you really want to sell sometheing?"
-  - text: "Nu davai, show what you've got"
+  - text: "So, show what you've got"
+  
+  utter_sell_Night_Star:
+  - text: "Here are your 1,500 rubles. Take it and go away."
+  - text: "1,500 rubles are yours. Take it and go away."
+  - text: "Good deal! 1,500 rubles are yours."
+  
+  utter_sell_Sparkler:
+  - text: "1,730 rubles are yours. Take it and go away."
+  - text: "Here are your 1,730 rubles. Take it and go away."
+  - text: "Good deal! 1,730 rubles are yours."
 
   utter_can_hide:
   - text: "You can hide in {station_name}"
