@@ -8,6 +8,11 @@ intents:
   - where_hide
   - when_was
   - when_will
+  - buy
+  - buy_cost
+  - offer
+  - sleep
+  - food_select
 
 slots:
   id:
@@ -18,7 +23,7 @@ slots:
     type: text
   station_name:
     type: text
-  purhased_item:
+  purchased_item:
     type: text
   money:
     type: text
@@ -42,12 +47,14 @@ actions:
 - action_check_hideaway
 - action_last_emission
 - action_future_emission
-- action_buy
-- action_buy_cost
-- utter_offer
 - action_sleep
 - utter_can_hide
 - utter_cant_hide
+- action_buy
+- action_buy_cost
+- utter_offer
+- action_check
+- action_food_select
 
 templates:
   utter_greet:
@@ -75,6 +82,9 @@ templates:
   utter_sell:
   - text: "So, do you really want to sell sometheing?"
   - text: "Nu davai, show what you've got"
+
+  utter_offer:
+  - text: "You can buy food or spend the night. What do you want?"
 
   utter_can_hide:
   - text: "You can hide in {station_name}"

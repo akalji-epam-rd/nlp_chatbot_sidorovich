@@ -37,16 +37,32 @@
 ## story buy
 * buy
   - action_buy
-
-## story buy_cost
-* buy
-  - action_buy
+* food_select
+  - action_food_select
+  - slot{"money" : null}
 * buy_cost
-  - action_buy_cost
+  - action_food_select
+  - slot{"money" : null}
+
+## story buy_cost2
+* buy_cost
+  - action_check
+ 
+## story food
+* food_select
+  - action_food_select
+  - slot{"money" : null}
+* buy_cost
+  - action_food_select
+  - slot{"money" : null}
   
 ## story sleep
 * sleep
   - action_sleep
+  - slot{"money" : null}
+* buy_cost
+  - action_buy_cost
+  - slot{"money" : null}
  
 ## can_hide story
 * can_hide
