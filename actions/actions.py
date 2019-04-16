@@ -22,58 +22,42 @@ from elasticsearch import Elasticsearch
 logger = logging.getLogger(__name__)
 
 class StalkerAnecdote(Action):
+    """
+    It responds with certain anecdote by elasticsearch query, if theme was specified properly, or throws random joke
+
+    """
+
     def name(self):
         return 'tell_an_anecdote'
+
     def run(self, dispatcher, tracker, domain):
         theme = tracker.get_slot('anecdote_theme')
+        es = Elasticsearch()
+
         buttons = []
-        laugh = ""
+        laugh = "a"
         for i in range(3):
-            laugh = (laugh + "ha")
-            title = (laugh)
-            payload = ("/laugh")
-            buttons.append({"title": title, "payload": payload})
+            laugh = laugh + "ha"
+            payload = "/laugh"
+            buttons.append({"title": laugh, "payload": payload})
+
+        #empty theme slot --> random joke
         if(theme is None):
-            dispatcher.utter_button_template('utter_joke', buttons,tracker)
+            dispatcher.utter_message('Attention, anecdote!')
+            dispatcher.utter_button_template('utter_joke', buttons, tracker)
         else:
-            dispatcher.utter_message('There should be funny anecdote with ' + theme)
-            dispatcher.utter_message('But take this instead')
-            dispatcher.utter_button_template('utter_joke', buttons,tracker)
+            anecdotes = es.search(index='jokes', body={"query":{"match":{"anecdote": theme}}})['hits']['hits']
+            if anecdotes:
+                #for i in anecdotes:
+                #    dispatcher.utter_message(i['_source']['anecdote'])
+                dispatcher.utter_message(random.choice(anecdotes)['_source']['anecdote'])
+                dispatcher.utter_button_template('utter_laugh', buttons, tracker)
+            else:
+                #elastic return empty answer --> random joke
+                dispatcher.utter_message('There should be funny anecdote with ' + theme)
+                dispatcher.utter_message('But i don\'t know any, so take this instead')
+                dispatcher.utter_button_template('utter_joke', buttons, tracker)
         return [SlotSet('anecdote_theme', None)]
-
-'''
-class MemoryVisit(Action):
-    def name(self):
-        return "memory_visit"
-
-    def run(self, dispatcher, tracker, domain):
-        # what your action should do
-        connection = MongoClient("ds127376.mlab.com", 27376)
-        db = connection["chatbot"]
-        db.authenticate("rasaguy", "rasabot1")
-        collection = db['visiting']
-        time_list = list(collection.find({}))
-        posts = db.visiting
-        
-        uid = tracker.get_slot('id')
-        if(uid is None):
-            user_id = len(time_list) + 1
-            
-            
-            st = datetime.datetime.fromtimestamp(get_time()).strftime('%Y-%m-%d %H:%M')
-            print(st)
-            post = {"id": str(user_id),
-                     "first_time": st}
-            posts.insert_one(post)
-            dispatcher.utter_message("Finally! A newcomer! I'm so tired of that ugly faces around")
-            return [SlotSet('id', str(user_id))]
-        else:
-            u_inf = collection.find_one({"id": uid})
-            first_time = u_inf['first_time']
-            dispatcher.utter_message("Oooh, I remember your smily face. It was sooo long ago. Thanks Gods I still remember correct time. I've met you %s" % first_time)
-        connection.close()
-        return []
-'''
 
 class AnswerQuestion(Action):
     def name(self):
