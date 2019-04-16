@@ -21,11 +21,9 @@ from elasticsearch import Elasticsearch
 
 logger = logging.getLogger(__name__)
 
-
 class StalkerAnecdote(Action):
     def name(self):
         return 'tell_an_anecdote'
-
     def run(self, dispatcher, tracker, domain):
         theme = tracker.get_slot('anecdote_theme')
         buttons = []
@@ -35,14 +33,13 @@ class StalkerAnecdote(Action):
             title = (laugh)
             payload = ("/laugh")
             buttons.append({"title": title, "payload": payload})
-        if (theme is None):
-            dispatcher.utter_button_template('utter_joke', buttons, tracker)
+        if(theme is None):
+            dispatcher.utter_button_template('utter_joke', buttons,tracker)
         else:
             dispatcher.utter_message('There should be funny anecdote with ' + theme)
             dispatcher.utter_message('But take this instead')
-            dispatcher.utter_button_template('utter_joke', buttons, tracker)
+            dispatcher.utter_button_template('utter_joke', buttons,tracker)
         return [SlotSet('anecdote_theme', None)]
-
 
 '''
 class MemoryVisit(Action):
@@ -78,7 +75,6 @@ class MemoryVisit(Action):
         return []
 '''
 
-
 class AnswerQuestion(Action):
     def name(self):
         return "answer_question"
@@ -86,12 +82,12 @@ class AnswerQuestion(Action):
     def run(self, dispatcher, tracker, domain):
         # what your action should do
         info = tracker.get_slot('info')
-        if (info is None):
+        if(info is None):
             dispatcher.utter_message("I don't know what are you talking about. Try again.")
         else:
             es = Elasticsearch()
-            res = es.search(index="desc", body={"query": {"match": {'title': info}}})
-            if (res['hits']['total']['value'] is 0):
+            res = es.search(index="desc", body = {"query": {"match":{'title': info}}})
+            if(res['hits']['total']['value'] is 0):
                 dispatcher.utter_message("I don't know about that thing. May be it has different name. Try again.")
             else:
                 dispatcher.utter_message("Yea, I can tell you a lot of things about %s" % info)
@@ -155,12 +151,16 @@ class ActionBuy(Action):
         return "action_buy"
 
     def run(self, dispatcher, tracker, domain):
-        # what your action should do
         money = tracker.get_slot('money')
+        food = [["bread", 5], ["canned food", 15], ["sausage", 25], ["vodka", 35], ["energy drink", 45]]
         if money is None:
-            dispatcher.utter_message("What would you like to eat?")
+            t = ""
+            for i in range(len(food)):
+                if i > 0:
+                    t += ", "
+                t += food[i][0]
+            dispatcher.utter_message("What would you like to buy? I have %s." % t)
         else:
-            food = [["bread", 5], ["canned food", 15], ["sausage", 25], ["vodka", 35], ["energy drink", 45]]
             t = ""
             for i in range(len(food)):
                 if int(money) >= food[i][1]:
@@ -182,17 +182,17 @@ class ActionFoodSelect(Action):
         item = tracker.get_slot('purchased_item')
         money = tracker.get_slot('money')
         if money is None:
-            dispatcher.utter_message("How much money will you give?")
+            dispatcher.utter_message("If you want %s, tell me how much money will you give?" % item)
         else:
             food = {"bread": 5, "canned food": 15, "sausage": 25, "vodka": 35, "energy drink": 45}
             d = food.get(item)
             if d is None:
-                dispatcher.utter_message("This is not available")
+                dispatcher.utter_message("This is not available.")
             else:
                 if int(money) >= food[item]:
                     dispatcher.utter_message("Take it.")
                 else:
-                    dispatcher.utter_message("You don't have enough")
+                    dispatcher.utter_message("You don't have enough. It costs at least %s rubles." % food[item])
         return [SlotSet("money", None)]
 
 
@@ -202,7 +202,7 @@ class ActionBuyCost(Action):
 
     def run(self, dispatcher, tracker, domain):
         money = tracker.get_slot('money')
-        if (int(money) >= 10):
+        if int(money) >= 10:
             dispatcher.utter_message("Then the bed for the night is yours.")
         else:
             dispatcher.utter_message("Can not help with this, look elsewhere.")

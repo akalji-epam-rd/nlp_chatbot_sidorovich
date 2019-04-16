@@ -47,6 +47,14 @@
 ## story buy_cost2
 * buy_cost
   - action_check
+ 
+## story food
+* food_select
+  - action_food_select
+  - slot{"money" : null}
+* buy_cost
+  - action_food_select
+  - slot{"money" : null}
   
 ## story sleep
 * sleep
