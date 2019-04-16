@@ -55,6 +55,7 @@ actions:
 - utter_offer
 - action_check
 - action_food_select
+- utter_laugh
 
 templates:
   utter_greet:
@@ -95,3 +96,7 @@ templates:
   - text: "You can't hide in {station_name}"
   - text: "Nope, stalker, you won't keep up to get here"
   - text: "No, you should find another hideaway"
+  
+  utter_laugh:
+  - text: "Ahahahaha"
+  
