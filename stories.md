@@ -67,6 +67,18 @@
 ## can_hide story
 * can_hide
   - action_check_hideaway
+ 
+## can_hide typo story 1
+* can_hide
+  - action_check_hideaway
+* confirm_yes
+  - action_hurry_up
+
+## can_hide typo story 2
+* can_hide
+  - action_check_hideaway
+* confirm_no
+  - utter_dont_know_place
 
 ## where_hide story
 * where_hide

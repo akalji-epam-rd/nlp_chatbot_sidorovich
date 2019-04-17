@@ -127,3 +127,13 @@
 - Okay, whe will be the emission?
 - When emission?
 - And when will be the emission?
+
+## intent:confirm_yes
+- Yes
+- Yep
+- Yup
+- Sure
+
+## intent:confirm_no
+- No
+- Nope

@@ -13,6 +13,8 @@ intents:
   - offer
   - sleep
   - food_select
+  - confirm_yes
+  - confirm_no
 
 slots:
   id:
@@ -31,7 +33,8 @@ slots:
 entities:
 - info
 - anecdote_theme
-- purchased_item   
+- purchased_item
+- station_name
 
 actions:
 - action_goodbye
@@ -55,6 +58,10 @@ actions:
 - utter_offer
 - action_check
 - action_food_select
+- utter_ask_confirm_typo
+- utter_dont_know_place
+- action_hurry_up
+- utter_hurry_up
 
 templates:
   utter_greet:
@@ -94,3 +101,18 @@ templates:
   utter_cant_hide:
   - text: "Nope, stalker, you won't keep up to get here"
   - text: "No, you should find another hideaway"
+
+  utter_ask_confirm_typo:
+  - text: "Maybe you mean {true_station}?"
+    buttons:
+    - title: "yes"
+      payload: '/confirm_yes'
+    - title: "nope"
+      payload: '/confirm_no'
+
+  utter_dont_know_place:
+  - text: "hmm, I don't know this place, stalker"
+
+  utter_hurry_up:
+  - text: "Then you should hurry because emission will be in {time_till_emission} minutes"
+  - text: "Hurry up! Emission will be in {time_till_emission} minutes"
