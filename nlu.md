@@ -16,9 +16,9 @@
 - what services can you provide
 
 ## intent:laugh
-- ha
-- haha
-- hahaha
+- aha
+- ahaha
+- ahahaha
 
 ## intent:goodbye
 - bye

@@ -13,7 +13,8 @@ intents:
   - offer
   - sleep
   - food_select
-
+  - laugh
+  - describe
 slots:
   id:
     type: text
