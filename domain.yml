@@ -39,7 +39,6 @@ slots:
 entities:
 - info
 - anecdote_theme
-- purchased_item
 - station_name
 - purchased_item
 
