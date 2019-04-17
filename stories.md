@@ -18,19 +18,19 @@
 * laugh
   - utter_not_fun
 
-## not fun
-* laugh
-  - utter_not_fun
+## story 10
+* info_question{"info":"Darkscape"}
+  - answer_question
 
 
 ## story_sell
 * sell
  - utter_sell
- 
+
 ## story_sell_Night_Star
 * sell_Night_Star
  - utter_sell_Night_Star
- 
+
 ## story_sell_Sparkler
 * sell_Sparkler
  - utter_sell_Sparkler
@@ -42,7 +42,7 @@
 ## story offer
 * offer
   - utter_offer
- 
+
 ## story buy
 * buy
   - action_buy
@@ -56,7 +56,7 @@
 ## story sleep
 * sleep
   - action_sleep
- 
+
 ## can_hide story
 * can_hide
   - action_check_hideaway

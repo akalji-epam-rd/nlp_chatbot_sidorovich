@@ -10,6 +10,7 @@ intents:
   - when_will
   - sell_Night_Star
   - sell_Sparkler
+  - sell
 
 slots:
   id:
@@ -28,9 +29,10 @@ slots:
 entities:
 - info
 - anecdote_theme
-- purchased_item   
+- purchased_item
 
 actions:
+- memory_visit
 - action_goodbye
 - utter_goodbye
 - utter_joke
@@ -52,6 +54,8 @@ actions:
 - action_sleep
 - utter_can_hide
 - utter_cant_hide
+- utter_sell
+- sell_request
 
 templates:
   utter_greet:
@@ -59,35 +63,36 @@ templates:
     buttons:
     - title: "What services do you provide"
       payload: "/describe"
-  
+
   utter_describe:
   - text: "Well, at first you can buy something or sell if you got lucky. Also I live here for a long time so I can tell about some creatures or anomaly. As you can see there is emission sometimes and I am sure you don't want to be outside therefore I will give you advice about safe place. And my best service is the jokes."
-  
+
   utter_goodbye:
   - text: "Hope to see ya again buddie"
   - text: "Don't lose yourself in that lands"
-  
+
   utter_joke:
   - text: "Stalker bought an exosuit and it was perfectly fitted"
   - text: "Group of stalkers Finn and Skin went to Sidorovich to get their cash for the habar, but he messed up. So Skin got check for Finn and Finn got Foreskin"
   - text: "A Controller was passing through hte forest and saw a burning zaporozhec. It got inside and burned down."
   - text: "A Pseudogiant learned how to breath with his ass, he sat on a tree stump and choked."
-    
+
   utter_not_fun:
   - text: "But that's not even funny."
-  
+
   utter_sell:
   - text: "So, show what you've got"
-  
+
   utter_sell_Night_Star:
   - text: "Here are your 1,500 rubles. Take it and go away."
   - text: "1,500 rubles are yours. Take it and go away."
   - text: "Good deal! 1,500 rubles are yours."
-  
+
   utter_sell_Sparkler:
   - text: "1,730 rubles are yours. Take it and go away."
   - text: "Here are your 1,730 rubles. Take it and go away."
   - text: "Good deal! 1,730 rubles are yours."
+  - text: "So, do you really want to sell sometheing?"
 
   utter_can_hide:
   - text: "You can hide in {station_name}"
