@@ -16,9 +16,9 @@
 - what services can you provide
 
 ## intent:laugh
-- ha
-- haha
-- hahaha
+- aha
+- ahaha
+- ahahaha
 
 ## intent:goodbye
 - bye
@@ -83,6 +83,17 @@
 - Approximately [10](money) rubles
 - I have [50](money) rubles
 - [100](money) rubles
+- [10](money) rubles
+- [30](money)
+- About [15](money)
+
+## intent:food_select
+- I want [bread](purchased_item)
+- [vodka](purchased_item)
+- Give me [sausage](purchased_item)
+- I would take [energy drink](purchased_item)
+- I would eat [canned food](purchased_item)
+
 
 ## intent:offer
 - What can you offer me?
@@ -90,6 +101,8 @@
 - What can I get?
 - What is there for me?
 - Is there anything for me?
+- What can I spend money on?
+- How can I use my money?
 
 ## intent:sleep
 - I want sleep
@@ -129,5 +142,12 @@
 - When emission?
 - And when will be the emission?
 
-## lookup:station_name
-station_name.txt
+## intent:confirm_yes
+- Yes
+- Yep
+- Yup
+- Sure
+
+## intent:confirm_no
+- No
+- Nope
