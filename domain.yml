@@ -66,6 +66,7 @@ actions:
 - utter_dont_know_place
 - action_hurry_up
 - utter_hurry_up
+- utter_bad
 
 templates:
   utter_greet:
