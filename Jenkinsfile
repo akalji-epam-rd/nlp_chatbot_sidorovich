@@ -18,7 +18,7 @@ pipeline {
         
         user = "centos"
         port_rasa = "5005"
-		    port_actions = "5055"
+        port_actions = "5055"
 		
     }
     options {
@@ -47,7 +47,7 @@ pipeline {
         }
 		stage("NLU train") {
             steps {
-                sh "sudo python3.6 -m rasa_nlu.train -c nlu_config.yml --data nlu.md -o models --fixed_model_name nlu --project current --verbose"
+                sh "sudo python3.6 -m rasa_nlu.train -c nlu_config.yml --data training_dataset.json -o models --fixed_model_name nlu --project current --verbose"
             }
         }
 		stage("Core train") {
