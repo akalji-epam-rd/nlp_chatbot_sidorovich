@@ -91,3 +91,7 @@
 ## future emission story
 * when_will
   - action_future_emission
+  
+## bad words
+* bad_words
+  - utter_bad
