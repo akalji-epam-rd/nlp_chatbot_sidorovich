@@ -15,7 +15,9 @@ intents:
   - food_select
   - confirm_yes
   - confirm_no
-
+  - laugh
+  - describe
+  -
 slots:
   id:
     type: text
@@ -58,6 +60,7 @@ actions:
 - utter_offer
 - action_check
 - action_food_select
+- utter_laugh
 - utter_ask_confirm_typo
 - utter_dont_know_place
 - action_hurry_up
@@ -101,6 +104,9 @@ templates:
   utter_cant_hide:
   - text: "Nope, stalker, you won't keep up to get here"
   - text: "No, you should find another hideaway"
+
+  utter_laugh:
+  - text: "Ahahahaha"
 
   utter_ask_confirm_typo:
   - text: "Maybe you mean {true_station}?"
