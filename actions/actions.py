@@ -130,7 +130,7 @@ class ActionCheckHideaway(Action):
         station_name = station_name.lower() if station_name else None
 
         if station_name is None:
-            dispatcher.utter_message("hmm, I don't know this place")
+            dispatcher.utter_message("hmm, I don't know this place, stalker")
 
         if station_name not in stations:
             for true_station in stations:
@@ -138,7 +138,7 @@ class ActionCheckHideaway(Action):
                 if n_diffs == 1:
                     dispatcher.utter_message("Maybe you mean {}? Then you should hurry because emission will be in {} minutes".format(true_station, 60 - datetime.datetime.today().minute))
                     return []
-            dispatcher.utter_message("hmm, I don't know this place")
+            dispatcher.utter_message("hmm, I don't know this place, stalker")
             return []
 
         is_can = random.choice([True, False])
@@ -164,7 +164,11 @@ class ActionFutureEmission(Action):
         return "action_future_emission"
 
     def run(self, dispatcher, tracker, domain):
-        dispatcher.utter_message("The emission will be in {} minutes".format(60 - datetime.datetime.today().minute))
+        time_till_emission = 60 - datetime.datetime.today().minute
+        if time_till_emission < 20:
+            dispatcher.utter_message("Hurry up! The emission will be in {}".format(time_till_emission))
+        else:
+            dispatcher.utter_message("You have enough time. The emission will be in {} minutes".format(time_till_emission))
         return []
 
 
