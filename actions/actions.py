@@ -98,14 +98,50 @@ class ActionFindHideaway(Action):
         return []
 
 
+class ActionHurryUp(Action):
+    def name(self):
+        return "action_hurry_up"
+
+    def run(self, dispatcher, tracker, domain):
+        time_till_emission = 60 - datetime.datetime.today().minute
+        dispatcher.utter_template("utter_hurry_up", tracker, time_till_emission=time_till_emission)
+        return []
+
+
 class ActionCheckHideaway(Action):
     def name(self):
         return "action_check_hideaway"
 
     def run(self, dispatcher, tracker, domain):
+        connection = MongoClient("ds127376.mlab.com", 27376)
+        db = connection["chatbot"]
+        db.authenticate("rasaguy", "rasabot1")
+        collection = db['stations']
+        stations = [document['station_name'].lower() for document in collection.find()]
+        connection.close()
+
+        station_name = tracker.get_slot('station_name')
+        station_name = station_name.lower() if station_name else None
+
+        if station_name is None:
+            dispatcher.utter_template("utter_dont_know_place", tracker)
+            return []
+
+        if station_name not in stations:
+            for true_station in stations:
+                n_diffs = sum(1 for a, b in zip(station_name, true_station) if a != b)
+                if n_diffs == 1:
+                    dispatcher.utter_template("utter_ask_confirm_typo", tracker, true_station=true_station)
+                    return []
+            dispatcher.utter_template("utter_dont_know_place", tracker)
+            return []
+
         is_can = random.choice([True, False])
         if is_can:
             dispatcher.utter_template("utter_can_hide", tracker)
+            time_till_emission = 60 - datetime.datetime.today().minute
+            if time_till_emission < 20:
+                dispatcher.utter_template("utter_hurry_up", tracker, time_till_emission=time_till_emission)
         else:
             dispatcher.utter_template("utter_cant_hide", tracker)
 
@@ -126,7 +162,11 @@ class ActionFutureEmission(Action):
         return "action_future_emission"
 
     def run(self, dispatcher, tracker, domain):
-        dispatcher.utter_message("The emission will be in {} minutes".format(60 - datetime.datetime.today().minute))
+        time_till_emission = 60 - datetime.datetime.today().minute
+        if time_till_emission < 20:
+            dispatcher.utter_message("Hurry up! The emission will be in {}".format(time_till_emission))
+        else:
+            dispatcher.utter_message("You have enough time. The emission will be in {} minutes".format(time_till_emission))
         return []
 
 

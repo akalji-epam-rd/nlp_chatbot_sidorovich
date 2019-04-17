@@ -128,5 +128,12 @@
 - When emission?
 - And when will be the emission?
 
-## lookup:station_name
-station_name.txt
+## intent:confirm_yes
+- Yes
+- Yep
+- Yup
+- Sure
+
+## intent:confirm_no
+- No
+- Nope

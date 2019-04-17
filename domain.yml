@@ -13,8 +13,12 @@ intents:
   - offer
   - sleep
   - food_select
+  - confirm_yes
+  - confirm_no
   - laugh
   - describe
+  - bad_words
+  
 slots:
   id:
     type: text
@@ -32,7 +36,8 @@ slots:
 entities:
 - info
 - anecdote_theme
-- purchased_item   
+- purchased_item
+- station_name
 
 actions:
 - action_goodbye
@@ -57,6 +62,10 @@ actions:
 - action_check
 - action_food_select
 - utter_laugh
+- utter_ask_confirm_typo
+- utter_dont_know_place
+- action_hurry_up
+- utter_hurry_up
 
 templates:
   utter_greet:
@@ -89,15 +98,32 @@ templates:
   - text: "You can buy food or spend the night. What do you want?"
 
   utter_can_hide:
-  - text: "You can hide in {station_name}"
   - text: "Yep, stalker, you can hide here"
-  - text: "Ofc, you can"
+  - text: "Yep, you can, but you should hurry"
+  - text: "Yes', but the emission will be soon"
 
   utter_cant_hide:
-  - text: "You can't hide in {station_name}"
   - text: "Nope, stalker, you won't keep up to get here"
   - text: "No, you should find another hideaway"
-  
+
   utter_laugh:
   - text: "Ahahahaha"
+
+  utter_ask_confirm_typo:
+  - text: "Maybe you mean {true_station}?"
+    buttons:
+    - title: "yes"
+      payload: '/confirm_yes'
+    - title: "nope"
+      payload: '/confirm_no'
+
+  utter_dont_know_place:
+  - text: "hmm, I don't know this place, stalker"
+
+  utter_hurry_up:
+  - text: "Then you should hurry because emission will be in {time_till_emission} minutes"
+  - text: "Hurry up! Emission will be in {time_till_emission} minutes"
   
+  utter_bad:
+  - text: "No, fuck you"
+  - text: "Dear, I'll wash your mouth with a soup"
