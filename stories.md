@@ -18,11 +18,6 @@
 * laugh
   - utter_not_fun
 
-## story 10
-* info_question{"info":"Darkscape"}
-  - answer_question
-
-
 ## story_sell
 * sell
  - utter_sell
