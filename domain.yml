@@ -73,10 +73,6 @@ actions:
 - utter_dont_know_place
 - action_hurry_up
 - utter_hurry_up
-- action_sleep
-- utter_can_hide
-- utter_cant_hide
-- utter_sell
 - sell_request
 - utter_bad
 
