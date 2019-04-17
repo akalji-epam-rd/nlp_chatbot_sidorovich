@@ -17,7 +17,8 @@ intents:
   - confirm_no
   - laugh
   - describe
-  -
+  - bad_words
+  
 slots:
   id:
     type: text
@@ -122,3 +123,7 @@ templates:
   utter_hurry_up:
   - text: "Then you should hurry because emission will be in {time_till_emission} minutes"
   - text: "Hurry up! Emission will be in {time_till_emission} minutes"
+  
+  utter_bad:
+  - text: "No, fuck you"
+  - text: "Dear, I'll wash your mouth with a soup"
