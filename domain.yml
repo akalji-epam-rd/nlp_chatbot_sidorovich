@@ -43,7 +43,6 @@ entities:
 - purchased_item
 
 actions:
-- memory_visit
 - action_goodbye
 - utter_goodbye
 - utter_joke
