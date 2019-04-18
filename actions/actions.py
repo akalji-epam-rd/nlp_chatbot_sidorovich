@@ -21,6 +21,7 @@ from elasticsearch import Elasticsearch
 
 logger = logging.getLogger(__name__)
 
+
 class StalkerAnecdote(Action):
     """
     It responds with certain anecdote by elasticsearch query, if theme was specified properly, or throws random joke
@@ -41,23 +42,24 @@ class StalkerAnecdote(Action):
             payload = "/laugh"
             buttons.append({"title": laugh, "payload": payload})
 
-        #empty theme slot --> random joke
-        if(theme is None):
+        # empty theme slot --> random joke
+        if (theme is None):
             dispatcher.utter_message('Attention, anecdote!')
             dispatcher.utter_button_template('utter_joke', buttons, tracker)
         else:
-            anecdotes = es.search(index='jokes', body={"query":{"match":{"anecdote": theme}}})['hits']['hits']
+            anecdotes = es.search(index='jokes', body={"query": {"match": {"anecdote": theme}}})['hits']['hits']
             if anecdotes:
-                #for i in anecdotes:
+                # for i in anecdotes:
                 #    dispatcher.utter_message(i['_source']['anecdote'])
                 dispatcher.utter_message(random.choice(anecdotes)['_source']['anecdote'])
                 dispatcher.utter_button_template('utter_laugh', buttons, tracker)
             else:
-                #elastic return empty answer --> random joke
+                # elastic return empty answer --> random joke
                 dispatcher.utter_message('There should be funny anecdote with ' + theme)
                 dispatcher.utter_message('But i don\'t know any, so take this instead')
                 dispatcher.utter_button_template('utter_joke', buttons, tracker)
         return [SlotSet('anecdote_theme', None)]
+
 
 class AnswerQuestion(Action):
     def name(self):
@@ -66,12 +68,12 @@ class AnswerQuestion(Action):
     def run(self, dispatcher, tracker, domain):
         # what your action should do
         info = tracker.get_slot('info')
-        if(info is None):
+        if (info is None):
             dispatcher.utter_message("I don't know what are you talking about. Try again.")
         else:
             es = Elasticsearch()
-            res = es.search(index="desc", body = {"query": {"match":{'title': info}}})
-            if(res['hits']['total']['value'] == 0):
+            res = es.search(index="desc", body={"query": {"match": {'title': info}}})
+            if (res['hits']['total']['value'] == 0):
                 dispatcher.utter_message("I don't know about that thing. May be it has different name. Try again.")
             else:
                 dispatcher.utter_message("Yea, I can tell you a lot of things about %s" % info)
@@ -131,7 +133,10 @@ class ActionCheckHideaway(Action):
             for true_station in stations:
                 n_diffs = sum(1 for a, b in zip(station_name, true_station) if a != b)
                 if n_diffs == 1:
-                    dispatcher.utter_template("utter_ask_confirm_typo", tracker, true_station=true_station)
+                    time_till_emission = 60 - datetime.datetime.today().minute
+                    dispatcher.utter_message(
+                        "Maybe you mean {}. Then you should hurry because emission will be in {} minutes".format(
+                            true_station, time_till_emission))
                     return []
             dispatcher.utter_template("utter_dont_know_place", tracker)
             return []
@@ -166,7 +171,8 @@ class ActionFutureEmission(Action):
         if time_till_emission < 20:
             dispatcher.utter_message("Hurry up! The emission will be in {}".format(time_till_emission))
         else:
-            dispatcher.utter_message("You have enough time. The emission will be in {} minutes".format(time_till_emission))
+            dispatcher.utter_message(
+                "You have enough time. The emission will be in {} minutes".format(time_till_emission))
         return []
 
 
