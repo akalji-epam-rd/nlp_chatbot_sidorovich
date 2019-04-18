@@ -13,29 +13,53 @@
 - i want to know about all services
 - what services do you provide
 - what is that place
+- what services can you provide
 
 ## intent:laugh
-- ha
-- haha
-- hahaha
+- aha
+- ahaha
+- ahahaha
 
 ## intent:goodbye
 - bye
 - goodbye
 - see you around
 - see you later
+- leaving
+- talk to you soon
+- have to go
+- got to go
+- talk to you later
+- heading out
+- im leaving now
+- going out
 
 ## intent:sell
 - i want to sell something
+- I want to sell smth
+- I want to sell something
 - i want to sell smth
 - sell
 
+## intent:sell_Night_Star
+- I want to sell Night Star
+- I want to sell night star
+- Night Star
+- night star
+
+## intent: sell_Sparkler
+- I want to sell Sparkler
+- I want to sell sparkler
+- Sparkler
+- sparkler
+
 ## intent:anecdote
-- I would like to hear a joke about [bloodsucker](anecdote_theme)
-- Tell me a joke with [pseudogiant](anecdote_theme) in it
-- An anecdote about [controller](anecdote_theme) please
-- Tell me an anecdote with [snork](anecdote_theme)  please
-- I would like to hear an anecdote [burer](anecdote_theme)
+- I would like to hear a joke about [mutant](anecdote_theme)
+- Tell me a joke with [monstr](anecdote_theme) in it
+- An anecdote about [person](anecdote_theme) please
+- Tell me an anecdote with [zone](anecdote_theme)  please
+- I would like to hear an anecdote [chernobyle](anecdote_theme)
+- Tell me a joke about [bear](anecdote_theme)
 
 ## intent:info_question
 - What do you know about [Otter](info)
@@ -59,6 +83,17 @@
 - Approximately [10](money) rubles
 - I have [50](money) rubles
 - [100](money) rubles
+- [10](money) rubles
+- [30](money)
+- About [15](money)
+
+## intent:food_select
+- I want [bread](purchased_item)
+- [vodka](purchased_item)
+- Give me [sausage](purchased_item)
+- I would take [energy drink](purchased_item)
+- I would eat [canned food](purchased_item)
+
 
 ## intent:offer
 - What can you offer me?
@@ -66,6 +101,8 @@
 - What can I get?
 - What is there for me?
 - Is there anything for me?
+- What can I spend money on?
+- How can I use my money?
 
 ## intent:sleep
 - I want sleep
@@ -83,20 +120,34 @@
 - Can I get to the [Yanov](station_name) before the emission?
 - Can I hide from emission at the [Yanov](station_name)?
 - Can I hide at the [Hospital](station_name) from emission?
+- Can I get to the [Skadovsk](station_name) before the emission?
 
 ## intent:where_hide
 - Where can I hide from emission?
 - Soon emission, where can I hide?
 - What is the nearest place where I can hide from the emission?
+- Where can I hide?
+- Greetings. where can I hide?
 
 ## intent:when_was
 - When was the last emission?
 - When was the emission?
+- Okay, when was the emission?
+- And when was the emission?
 
 ## intent:when_will
 - When will be the emission?
 - When will be next emission?
+- Okay, whe will be the emission?
+- When emission?
+- And when will be the emission?
 
-## lookup:station_name
-station_name.txt
+## intent:confirm_yes
+- Yes
+- Yep
+- Yup
+- Sure
 
+## intent:confirm_no
+- No
+- Nope
