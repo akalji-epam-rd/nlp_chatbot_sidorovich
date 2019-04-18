@@ -16,8 +16,6 @@ intents:
   - offer
   - sleep
   - food_select
-  - confirm_yes
-  - confirm_no
   - laugh
   - describe
   - bad_words
@@ -125,14 +123,6 @@ templates:
 
   utter_laugh:
   - text: "Ahahahaha"
-
-  utter_ask_confirm_typo:
-  - text: "Maybe you mean {true_station}?"
-    buttons:
-    - title: "yes"
-      payload: '/confirm_yes'
-    - title: "nope"
-      payload: '/confirm_no'
 
   utter_dont_know_place:
   - text: "hmm, I don't know this place, stalker"
