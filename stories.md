@@ -22,25 +22,17 @@
 * laugh
   - utter_not_fun
 
-## story_sell
+## story_sell_Night_Star
 * sell
   - utter_sell
-
-## story_sell_Night_Star
 * sell_Night_Star
   - utter_sell_Night_Star
 
 ## story_sell_Sparkler
+* sell
+  - utter_sell
 * sell_Sparkler
   - utter_sell_Sparkler
-
-## story_sell_Night_Star
-* sell_Night_Star
- - utter_sell_Night_Star
-
-## story_sell_Sparkler
-* sell_Sparkler
- - utter_sell_Sparkler
 
 ## say goodbye
 * goodbye
