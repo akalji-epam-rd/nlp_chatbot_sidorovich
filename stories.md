@@ -22,15 +22,15 @@
 * laugh
   - utter_not_fun
 
-## story_sell
+## story_sell_Night_Star
 * sell
   - utter_sell
-
-## story_sell_Night_Star
 * sell_Night_Star
   - utter_sell_Night_Star
 
 ## story_sell_Sparkler
+* sell
+  - utter_sell
 * sell_Sparkler
   - utter_sell_Sparkler
 
@@ -100,7 +100,3 @@
 ## future emission story
 * when_will
   - action_future_emission
-
-## bad words
-* bad_words
-  - utter_bad
