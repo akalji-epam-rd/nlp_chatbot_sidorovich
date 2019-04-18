@@ -22,25 +22,17 @@
 * laugh
   - utter_not_fun
 
-## story_sell
+## story_sell_Night_Star
 * sell
   - utter_sell
-
-## story_sell_Night_Star
 * sell_Night_Star
   - utter_sell_Night_Star
 
 ## story_sell_Sparkler
+* sell
+  - utter_sell
 * sell_Sparkler
   - utter_sell_Sparkler
-
-## story_sell_Night_Star
-* sell_Night_Star
- - utter_sell_Night_Star
-
-## story_sell_Sparkler
-* sell_Sparkler
- - utter_sell_Sparkler
 
 ## say goodbye
 * goodbye
@@ -84,18 +76,7 @@
 ## can_hide story
 * can_hide
   - action_check_hideaway
-
-## can_hide typo story 1
-* can_hide
-  - action_check_hideaway
-* confirm_yes
-  - action_hurry_up
-
-## can_hide typo story 2
-* can_hide
-  - action_check_hideaway
-* confirm_no
-  - utter_dont_know_place
+  - slot{"station_name": null}
 
 ## where_hide story
 * where_hide
@@ -108,7 +89,3 @@
 ## future emission story
 * when_will
   - action_future_emission
-
-## bad words
-* bad_words
-  - utter_bad

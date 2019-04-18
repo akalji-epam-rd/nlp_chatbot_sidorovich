@@ -125,7 +125,7 @@ class ActionCheckHideaway(Action):
 
         if station_name is None:
             dispatcher.utter_template("utter_dont_know_place", tracker)
-            return []
+            return [SlotSet("station_name", None)]
 
         if station_name not in stations:
             for true_station in stations:
@@ -135,9 +135,9 @@ class ActionCheckHideaway(Action):
                     dispatcher.utter_message(
                         "Maybe you mean {}. Then you should hurry because emission will be in {} minutes".format(
                             true_station, time_till_emission))
-                    return []
+                    return [SlotSet("station_name", None)]
             dispatcher.utter_template("utter_dont_know_place", tracker)
-            return []
+            return [SlotSet("station_name", None)]
 
         is_can = random.choice([True, False])
         if is_can:
@@ -148,7 +148,7 @@ class ActionCheckHideaway(Action):
         else:
             dispatcher.utter_template("utter_cant_hide", tracker)
 
-        return []
+        return [SlotSet("station_name", None)]
 
 
 class ActionLastEmission(Action):
