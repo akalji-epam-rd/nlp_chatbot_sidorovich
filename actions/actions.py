@@ -42,7 +42,7 @@ class StalkerAnecdote(Action):
             buttons.append({"title": laugh, "payload": payload})
 
         #empty theme slot --> random joke
-        if(theme is None):
+        if(not theme):
             dispatcher.utter_message('Attention, anecdote!')
             dispatcher.utter_button_template('utter_joke', buttons, tracker)
         else:
@@ -66,7 +66,7 @@ class AnswerQuestion(Action):
     def run(self, dispatcher, tracker, domain):
         # what your action should do
         info = tracker.get_slot('info')
-        if(info is None):
+        if(not info):
             dispatcher.utter_message("I don't know what are you talking about. Try again.")
         else:
             es = Elasticsearch()
