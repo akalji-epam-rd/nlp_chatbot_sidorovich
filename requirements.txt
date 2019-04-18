@@ -37,3 +37,9 @@ keras-preprocessing==1.0.5
 elasticsearch
 bson
 pprint
+logging
+requests
+json
+datetime
+time
+random
