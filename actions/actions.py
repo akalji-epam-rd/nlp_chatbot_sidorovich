@@ -42,7 +42,7 @@ class StalkerAnecdote(Action):
             buttons.append({"title": laugh, "payload": payload})
 
         #empty theme slot --> random joke
-        if(theme is None):
+        if(not theme):
             dispatcher.utter_message('Attention, anecdote!')
             dispatcher.utter_button_template('utter_joke', buttons, tracker)
         else:
@@ -66,7 +66,7 @@ class AnswerQuestion(Action):
     def run(self, dispatcher, tracker, domain):
         # what your action should do
         info = tracker.get_slot('info')
-        if(info is None):
+        if(not info):
             dispatcher.utter_message("I don't know what are you talking about. Try again.")
         else:
             es = Elasticsearch()
@@ -209,7 +209,10 @@ class ActionFoodSelect(Action):
         item = tracker.get_slot('purchased_item')
         money = tracker.get_slot('money')
         if money is None:
-            dispatcher.utter_message("If you want %s, tell me how much money will you give?" % item)
+            if item is None:
+                dispatcher.utter_message("I don't understand, can you repeat?")
+            else:
+                dispatcher.utter_message("If you want %s, tell me how much money will you give?" % item)
         else:
             food = {"bread": 5, "canned food": 15, "sausage": 25, "vodka": 35, "energy drink": 45}
             d = food.get(item)
