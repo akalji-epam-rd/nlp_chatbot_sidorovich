@@ -209,7 +209,10 @@ class ActionFoodSelect(Action):
         item = tracker.get_slot('purchased_item')
         money = tracker.get_slot('money')
         if money is None:
-            dispatcher.utter_message("If you want %s, tell me how much money will you give?" % item)
+            if item is None:
+                dispatcher.utter_message("I don't understand, can you repeat?")
+            else:
+                dispatcher.utter_message("If you want %s, tell me how much money will you give?" % item)
         else:
             food = {"bread": 5, "canned food": 15, "sausage": 25, "vodka": 35, "energy drink": 45}
             d = food.get(item)
