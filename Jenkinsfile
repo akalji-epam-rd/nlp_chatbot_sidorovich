@@ -47,22 +47,22 @@ pipeline {
         }
 		stage("NLU train") {
             steps {
-                sh "sudo python3.6 -m rasa_nlu.train -c nlu_config.yml --data training_dataset.json -o models --fixed_model_name nlu --project current --verbose"
+                sh "sudo ${venvBin}/python3.6 -m rasa_nlu.train -c nlu_config.yml --data training_dataset.json -o models --fixed_model_name nlu --project current --verbose"
             }
         }
 		stage("Core train") {
             steps {
-                sh "sudo python3.6 -m rasa_core.train -d domain.yml -s stories.md -o models/dialogue"
+                sh "sudo ${venvBin}/python3.6 -m rasa_core.train -d domain.yml -s stories.md -o models/dialogue"
             }
         }
 		stage("Start actions") {
             steps {
-                sh "sudo python3.6 -m rasa_core_sdk.endpoint --actions actions --port ${port_actions} &"
+                sh "sudo ${venvBin}/python3.6 -m rasa_core_sdk.endpoint --actions actions --port ${port_actions} &"
             }
         }
 		stage("Start bot") {
             steps {
-                sh "sudo python3.6 -m rasa_core.run -d models/dialogue -u models/current/nlu --port ${port_rasa} --endpoints endpoints.yml --credentials credentials.yml &"
+                sh "sudo ${venvBin}/python3.6 -m rasa_core.run -d models/dialogue -u models/current/nlu --port ${port_rasa} --endpoints endpoints.yml --credentials credentials.yml &"
             }
         }
     }
