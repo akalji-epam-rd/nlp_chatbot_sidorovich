@@ -17,6 +17,10 @@
   - slot{"anecdote_theme": null}
 * laugh
   - utter_not_fun
+  
+## not_fun
+* laugh
+  - utter_not_fun
 
 ## story_sell
 * sell
