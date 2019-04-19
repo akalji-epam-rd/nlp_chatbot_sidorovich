@@ -18,7 +18,6 @@ intents:
   - food_select
   - laugh
   - describe
-  - bad_words
 
 slots:
   id:
@@ -70,7 +69,6 @@ actions:
 - action_hurry_up
 - utter_hurry_up
 - sell_request
-- utter_bad
 
 templates:
   utter_greet:
@@ -131,6 +129,3 @@ templates:
   - text: "Then you should hurry because emission will be in {time_till_emission} minutes"
   - text: "Hurry up! Emission will be in {time_till_emission} minutes"
 
-  utter_bad:
-  - text: "No, fuck you"
-  - text: "Dear, I'll wash your mouth with a soup"

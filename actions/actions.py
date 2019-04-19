@@ -21,7 +21,6 @@ from elasticsearch import Elasticsearch
 
 logger = logging.getLogger(__name__)
 
-
 class StalkerAnecdote(Action):
     """
     It responds with certain anecdote by elasticsearch query, if theme was specified properly, or throws random joke
@@ -42,24 +41,23 @@ class StalkerAnecdote(Action):
             payload = "/laugh"
             buttons.append({"title": laugh, "payload": payload})
 
-        # empty theme slot --> random joke
-        if (theme is None):
+        #empty theme slot --> random joke
+        if(not theme):
             dispatcher.utter_message('Attention, anecdote!')
             dispatcher.utter_button_template('utter_joke', buttons, tracker)
         else:
-            anecdotes = es.search(index='jokes', body={"query": {"match": {"anecdote": theme}}})['hits']['hits']
+            anecdotes = es.search(index='jokes', body={"query":{"match":{"anecdote": theme}}})['hits']['hits']
             if anecdotes:
-                # for i in anecdotes:
+                #for i in anecdotes:
                 #    dispatcher.utter_message(i['_source']['anecdote'])
                 dispatcher.utter_message(random.choice(anecdotes)['_source']['anecdote'])
                 dispatcher.utter_button_template('utter_laugh', buttons, tracker)
             else:
-                # elastic return empty answer --> random joke
+                #elastic return empty answer --> random joke
                 dispatcher.utter_message('There should be funny anecdote with ' + theme)
                 dispatcher.utter_message('But i don\'t know any, so take this instead')
                 dispatcher.utter_button_template('utter_joke', buttons, tracker)
         return [SlotSet('anecdote_theme', None)]
-
 
 class AnswerQuestion(Action):
     def name(self):
@@ -68,12 +66,12 @@ class AnswerQuestion(Action):
     def run(self, dispatcher, tracker, domain):
         # what your action should do
         info = tracker.get_slot('info')
-        if (info is None):
+        if(not info):
             dispatcher.utter_message("I don't know what are you talking about. Try again.")
         else:
             es = Elasticsearch()
-            res = es.search(index="desc", body={"query": {"match": {'title': info}}})
-            if (res['hits']['total']['value'] == 0):
+            res = es.search(index="desc", body = {"query": {"match":{'title': info}}})
+            if(res['hits']['total']['value'] == 0):
                 dispatcher.utter_message("I don't know about that thing. May be it has different name. Try again.")
             else:
                 dispatcher.utter_message("Yea, I can tell you a lot of things about %s" % info)
@@ -127,7 +125,7 @@ class ActionCheckHideaway(Action):
 
         if station_name is None:
             dispatcher.utter_template("utter_dont_know_place", tracker)
-            return []
+            return [SlotSet("station_name", None)]
 
         if station_name not in stations:
             for true_station in stations:
@@ -137,9 +135,9 @@ class ActionCheckHideaway(Action):
                     dispatcher.utter_message(
                         "Maybe you mean {}. Then you should hurry because emission will be in {} minutes".format(
                             true_station, time_till_emission))
-                    return []
+                    return [SlotSet("station_name", None)]
             dispatcher.utter_template("utter_dont_know_place", tracker)
-            return []
+            return [SlotSet("station_name", None)]
 
         is_can = random.choice([True, False])
         if is_can:
@@ -150,7 +148,7 @@ class ActionCheckHideaway(Action):
         else:
             dispatcher.utter_template("utter_cant_hide", tracker)
 
-        return []
+        return [SlotSet("station_name", None)]
 
 
 class ActionLastEmission(Action):
@@ -171,8 +169,7 @@ class ActionFutureEmission(Action):
         if time_till_emission < 20:
             dispatcher.utter_message("Hurry up! The emission will be in {}".format(time_till_emission))
         else:
-            dispatcher.utter_message(
-                "You have enough time. The emission will be in {} minutes".format(time_till_emission))
+            dispatcher.utter_message("You have enough time. The emission will be in {} minutes".format(time_till_emission))
         return []
 
 
@@ -212,7 +209,10 @@ class ActionFoodSelect(Action):
         item = tracker.get_slot('purchased_item')
         money = tracker.get_slot('money')
         if money is None:
-            dispatcher.utter_message("If you want %s, tell me how much money will you give?" % item)
+            if item is None:
+                dispatcher.utter_message("I don't understand, can you repeat?")
+            else:
+                dispatcher.utter_message("If you want %s, tell me how much money will you give?" % item)
         else:
             food = {"bread": 5, "canned food": 15, "sausage": 25, "vodka": 35, "energy drink": 45}
             d = food.get(item)
