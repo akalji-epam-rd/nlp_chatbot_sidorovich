@@ -1,5 +1,5 @@
 # innkeeper_rasabot
-Simple telegram-bot
+Simple telegram-bot.
 
 ## Подключение к серверу
 
